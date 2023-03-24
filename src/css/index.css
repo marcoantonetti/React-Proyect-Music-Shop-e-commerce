@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: black;
+
+    
+
+    --header-lightgrey-translucent: rgba(128, 128, 128, 0.326);
+    --header-darkergrey-translucent: rgba(128, 128, 128, 0.223);
+    --light-green: rgb(173, 255, 47);
+    --shadow-black-box: 0.05rem 0.05rem 0.20rem rgb(105, 99, 99), -0.05rem -0.05rem 0.20rem rgb(105, 100, 100);
+
+}
+
+
+
+li {
+    list-style-type: none;
+}
+
+a, i{
+    text-decoration: none;
+}
