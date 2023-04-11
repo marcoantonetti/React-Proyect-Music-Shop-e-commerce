@@ -13,9 +13,11 @@
 
 /* Style and positioning of main logo */
 
-.div-main-logo-center{
+.link-main-logo-center{
     display: flex;
     height: 8rem;
+
+    margin: auto;
 
 }
 
@@ -64,8 +66,4 @@
 
     gap: 0.6rem;
 }
-
-
-
-
 

@@ -1,0 +1,35 @@
+.categories-container-flexwrap{
+
+    display: flex;
+    flex: wrap;
+    background-color: red;
+    gap: 1.5rem;
+
+}
+
+.img-cover{
+
+    object-fit: cover;
+    height: 40rem;
+    width: 100%;
+
+}
+
+.img-category{
+
+    height: 15rem;
+    max-width: 15rem;
+    width: auto;
+
+}
+
+.div-about-us{
+
+    margin: 2rem auto;
+
+}
+
+.div-about-us h2 {
+
+    margin-bottom: 2rem;
+}

@@ -1,8 +1,9 @@
 import React from 'react'
 import Buttons from './Buttons'
 import CartWidget from './CartWidget'
+import { Link, useParams } from 'react-router-dom'
 
-export const Item = ({img, title, subtitle, price}) => {
+export const Item = ({img, title, subtitle, price, id}) => {
 
 
   return (
@@ -20,12 +21,19 @@ export const Item = ({img, title, subtitle, price}) => {
 
         <hr/>
 
-        <div className='item-layout-cart-button'>
 
-        <Buttons name='Add to' className='li-item-addtocart-button'/>
+        <Link to='/cart' className='item-layout-cart-button-absolute'>
+
+        <Buttons name='Add to'/>
         <CartWidget/>
 
-        </div>
+        </Link>
+
+        <Link to= {`/detail/${id}`} className='item-layout-detail-button-absolute' >
+        
+        <Buttons name='Details'/>
+        
+        </Link>
         
     </div>
 

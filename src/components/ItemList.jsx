@@ -1,17 +1,31 @@
 import React from 'react'
 import { Item } from './Item'
 
-const ItemList = () => {
+const ItemList = ({products}) => {
+
 
 
     return (
 
-        <div className='div-itemList-container-auto'>
-            <Item
-                img={'./images/productos/acoustic guitars/1.jpg'} 
-                title={'Acoustic Guitar Cort'} 
-                subtitle={'Porous oaken wood'} 
-                price={'150'}/>
+        <div className='div-itemList-flex-container'>
+
+            {products.map ( (product, index) => 
+            
+                <div key={index}>
+
+
+                    <Item
+                        img = {product.thumbnail} 
+                        title = {product.title} 
+                        price = {product.price} 
+                        id={product.id}
+                        
+                        />
+                </div>
+
+                
+                )}
+
         </div>
 
 
