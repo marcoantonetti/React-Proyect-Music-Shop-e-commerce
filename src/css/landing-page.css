@@ -1,0 +1,112 @@
+main{
+    display: flex;
+    flex-direction: column;
+
+    gap: 3rem;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+
+}
+
+
+
+
+.img-cover{
+    
+    object-fit: cover;
+    height: 40rem;
+    width: 100%;
+    
+}
+
+/* Style and positioning for categories section */
+.section-categories-container{
+
+}
+
+.div-categories-container-flexwrap-centered{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    background-color: rgb(26, 4, 59);
+    
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hola{
+    padding: 3rem;
+    gap: 1rem;
+}
+
+
+.img-category{
+
+
+    height: 15rem;
+    max-width: 15rem;
+    width: auto;
+
+    margin: 1.5rem 1rem;
+
+}
+
+
+/* Style and positioning for services section */
+
+
+.section-our-services{
+    display: flex;
+    gap: 3rem;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.div-service-container-flexcol{
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    width: 15rem;
+
+}
+
+.section-top-selling-products{
+
+    display: flex;
+    flex-wrap: wrap;
+    
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 10rem;
+    overflow: hidden;
+
+
+    height: 22rem;
+    width: 100%;
+
+}
+
+
+.div-about-us{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.div-about-us h2 {
+
+    margin-bottom: 2rem;
+}

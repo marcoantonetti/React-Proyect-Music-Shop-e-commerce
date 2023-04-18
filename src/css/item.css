@@ -1,0 +1,70 @@
+/* Styles and positioning of the product card */
+
+.div-item-layout-relative{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.25rem;
+
+    border-radius: 0.25rem;
+    box-shadow: 0.05rem 0.05rem 0.2rem orange, -0.05rem -0.05rem 0.2rem orange;
+
+    width: 15rem;
+    height: 20rem;
+
+}
+
+.div-item-layout-relative hr{
+
+    width: 100%;
+    margin: 0.5rem 0rem;
+
+
+}
+
+
+.item-layout-cart-button-absolute{
+    display: flex;
+    
+    /* Este parrafo hacelo con scss include */
+    cursor: pointer;
+    position: absolute;
+    bottom: 0rem;
+    gap: 0.5rem;
+    border-radius: 0.25rem;
+    width: 40%;
+    box-shadow: var(--shadow-black-box);
+    margin-bottom: 0.7rem;
+    padding: 0.5rem;
+    
+    left: 1rem;
+
+    background-color: var(--light-green);
+
+
+
+
+}
+
+.item-layout-detail-button-absolute{
+
+    right: 1rem;
+    background-color: var(--light-gray);
+
+    cursor: pointer;
+    position: absolute;
+    bottom: 0rem;
+    gap: 0.5rem;
+    border-radius: 0.25rem;
+    width: 40%;
+    box-shadow: var(--shadow-black-box);
+    margin-bottom: 0.7rem;
+    padding: 0.5rem;
+
+
+}
+

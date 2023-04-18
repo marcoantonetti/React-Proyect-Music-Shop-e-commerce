@@ -1,0 +1,69 @@
+.header-flex-column{
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--header-lightgrey-translucent);
+
+    font-size: 1.2rem;
+    color: black;
+    width: 100%
+
+    
+}
+
+/* Style and positioning of main logo */
+
+.link-main-logo-center{
+    display: flex;
+    height: 8rem;
+
+    margin: auto;
+
+}
+
+.img-main-logo{
+    height: 100%;
+    width: 8rem;
+    margin: auto;
+
+}
+
+/* Style and positioning of nav bar links */
+.nav-navBar-flex-row-space-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 3rem;
+    /* background-color:  var(--header-darkergrey-translucent); */
+}
+
+/* Positioning of nav bar buttons */
+
+.ul-navBar-flex-row{
+    display: flex;
+}
+
+.ul-navButtons-flex-row{
+    display: flex;
+    margin-left: 2rem;
+    gap: 3rem;
+}
+
+.ul-navButtons-flex-row:last-child{
+    gap: 1rem;
+    margin-right: 1rem;
+}
+
+/* Style of Nav Bar buttons */
+.li-nav-button{
+    font-weight:  300;
+}
+
+
+.search-bar-logo-flex-row{
+    display: flex;
+
+    gap: 0.6rem;
+}
+

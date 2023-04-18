@@ -1,0 +1,19 @@
+/* Styles and positioning of the product detail card */
+
+
+.div-item-detail-layout{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    position: relative;
+
+}
+
+.div-counter-button{
+    display: flex;
+    gap: 0.25rem;
+}
