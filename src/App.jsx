@@ -19,7 +19,7 @@ function App() {
 
 
       <Route exact path='/' element={<LandingPage/>}/>
-      <Route exact path='/categories/:cid' element={<ItemListContainer/>}/>
+      <Route exact path='/categories/:cid' element={<ItemListContainer title='catalogo'/>}/>
       <Route exact path='/detail/:pid' element={<ItemDetailContainer/>}  />
       <Route exact path='/404error' element={<UrlNotFound/>}  />
 

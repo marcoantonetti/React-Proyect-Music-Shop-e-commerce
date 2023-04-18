@@ -18,7 +18,7 @@ export const ItemDetailContainer = () => {
 
     useEffect( () =>{
 
-        const query = async (id) => {
+        const fetchProductByID = async (id) => {
             
             try{
 
@@ -45,7 +45,7 @@ export const ItemDetailContainer = () => {
 
         }
             
-        query(pid)
+        fetchProductByID(pid)
     }
 
         , [])

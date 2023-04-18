@@ -7,9 +7,9 @@
 
     align-items: center;
     justify-content: center;
+    text-align: center;
     gap: 0.25rem;
 
-    border: orange 1px solid ;
     border-radius: 0.25rem;
     box-shadow: 0.05rem 0.05rem 0.2rem orange, -0.05rem -0.05rem 0.2rem orange;
 
@@ -67,3 +67,4 @@
 
 
 }
+

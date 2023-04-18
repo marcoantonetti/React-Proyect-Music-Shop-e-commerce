@@ -5,113 +5,137 @@ import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { useParams } from 'react-router-dom'
-import {allCategories } from './landing-page/categories'
+import { allCategories } from '../objects/categoriesObjects'
 
 
-const ItemListContainer = () => {
+const ItemListContainer = (props) => {
+
+    const {title} = props ;
 
     const url = "https://api.mercadolibre.com/sites/MLA/search?category=MLA1182";
-    
+
     const [products, setProducts] = useState()
-    const [error, setError] = useState (false)
+    const [error, setError] = useState(false)
     const [loading, setLoading] = useState(true)
 
-    const {cid} = useParams()
-    
+    const { cid } = useParams()
 
-    useEffect( () =>{
 
-        const query = async () => {
-            
-            try{
+    useEffect(() => {
+
+        // Mi itemlistcontainer va a mostrar productos por categoria ( if (cid)) o caso contrario, va a mostrar los 10 productos mas vendidos
+
+        const fetchProductByCategory = async () => {
+
+            try {
 
                 let resp = await fetch(url);
                 let respParsed = await resp.json();
 
-                        // Si viene el cid en el URL aplicar logica solo para el cid que sea igual a mi categoria.
+                // Si viene el cid en el URL aplicar logica solo para el cid que sea igual a mi categoria.
 
-                    if(cid){
+                if (cid) {
 
-                        allCategories.forEach((category) => {
+                    allCategories.forEach((category) => {
 
-                            if(cid == category.category){
+                        if (cid == category.category) {
 
-                                // En esta categoria filtrar los productos del API de acuerdo a la linea 49
-    
-                                setTimeout(() => {
-    
-                                setProducts(respParsed.results.filter((product) =>{
+                            // En esta categoria filtrar los productos del API en base a su categoria de mercado libre (category_id).
 
-                                        return category.categoryID.includes(product.category_id)
-        
+                            setTimeout(() => {
+
+                                setProducts(respParsed.results.filter((product) => {
+
+                                    return category.categoryID.includes(product.category_id)
+
                                 }))
 
                                 setLoading(false);
-    
+
                             }, 2000)
-                            }
-                            
-
-
-                         }
-                        )
-                        } else {
-
-                        setTimeout(() => {
-
-
-                            setProducts(respParsed.results);
-                            setLoading(false);
-
-                        }, 2000)
-
+                        }
 
                     }
-                
+                    )
+                } else {
 
-            
-            } catch{
+                    // Cuando no hay cid mostrar los 10 productos mas vendidos
+
+                    let featureProducts;
+
+                    function compareNumbers(a, b) {
+                        if ( a.sold_quantity < b.sold_quantity ){
+                            return 1;
+                          }
+                          if ( a.sold_quantity > b.sold_quantity ){
+                            return -1;
+                          }
+                          return 0;
+                    }
+
+                    function sortBySoldQuantity() {
+
+
+                        featureProducts = respParsed.results            
+                                                                        .sort(compareNumbers)
+                                                                        .slice(0,10)
+
+
+                        return featureProducts;
+
+                    }
+
+                    setTimeout(() => {
+
+
+                        setProducts(sortBySoldQuantity());
+                        setLoading(false);
+
+                    }, 500)
+                }
+
+            } catch {
 
                 console.log('error found. Internal server error')
-           
+
                 setTimeout(() => {
                     setError(true)
                     setLoading(false);
                 }
-                             ,2000)
+                    , 2000)
 
             }
 
         }
-            
-        query()
+
+        fetchProductByCategory()
     }
 
         , [cid])
 
-        console.log(products)
+    console.log(products)
 
 
     return (
 
         <section className='section-itemListcontainer-auto'>
 
-                    <h3>Catalogo</h3>
+            <h3 className='h3-title'>{title}</h3>
 
-                    {loading ? 
-                              <><p>Loading our products</p>
-                              <FontAwesomeIcon icon={faSpinner} className='fa-spin'/> </> 
-                              
-                                  : 
-                    
-                            error ? 
-                                    <p>We are sorry. An internal error has occured</p> 
-                                  : 
-                                    <ItemList products={products}/>
+            {loading ?
+                <><p>Loading our products</p>
+                    <FontAwesomeIcon icon={faSpinner} className='fa-spin' /> </>
 
-                    }
+                :
 
-                     
+                error ?
+                    <p>We are sorry. An internal error has occured</p>
+                    :
+                    <ItemList products={products} />
+
+            }
+
+
         </section>
 
 

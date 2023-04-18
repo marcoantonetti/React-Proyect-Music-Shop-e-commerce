@@ -24,3 +24,10 @@ li {
 a, i{
     text-decoration: none;
 }
+
+
+body{
+
+    overflow-x: hidden;
+
+}

@@ -13,7 +13,7 @@ export const Item = ({img, title, subtitle, price, id}) => {
 
         <img src={img} alt=''/>
 
-        <h3>{title}</h3>
+        <h3 >{title}</h3>
 
         <h4>{subtitle}</h4>
 
