@@ -41,12 +41,6 @@ category: 'Usados',
 img: '/images/Categories/Usados.png'
 }
 
-// const accesorios= {
-
-//     category: 'Accesorios',
-//     img: '/images/Categories/accesorios.png'
-
-// }
 
 const otros= {
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { allCategories } from '../../objects/categoriesObjects'
+import { allCategories } from '../../objects/categories'
 
 
 export const Categories = () => {

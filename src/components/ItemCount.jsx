@@ -9,6 +9,7 @@ export const ItemCount = ({initial=1, stock=10, min=0}) => {
   }
 
   const {count, increment, decrement, reset} = useCount(initial, stock, min )
+  console.log('count log', count)
   return (
 
 
