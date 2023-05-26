@@ -12,10 +12,10 @@ export const Services = ({children}) => {
 
 
       <>
-       { children.map((service)=>
+       { children.map((service, index)=>
 
 
-        <div className="div-service-container-flexcol">
+        <div key={index} className="div-service-container-flexcol">
 
             {service.icon}
 

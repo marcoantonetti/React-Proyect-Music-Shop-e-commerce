@@ -2,25 +2,23 @@ import React, { useState } from 'react'
 import { useCount } from '../hooks/useCount'
 
 
-export const ItemCount = ({initial=1, stock=10, min=0}) => {
+export const ItemCount = ({initial=1, stock=10, min=0, bringCount}) => {
 
   if(stock == 1) {
     stock = 10
   }
 
   const {count, increment, decrement, reset} = useCount(initial, stock, min )
-  console.log('count log', count)
   return (
 
 
-    <div className='div-counter-button'>
-      <button onClick={increment}> + </button>
-      <div>{count}</div>
-      <button onClick={decrement}> - </button>
+    <div className='div-counter-button-container'>
 
-      <div>
-        <button onClick={reset}> Reset </button>
-      </div>
+      <button class='button-counter' onClick={increment}> + </button>
+      <div onChange={bringCount(count)}>{count}</div>
+      <button class='button-counter' onClick={decrement}> - </button>
+
+      <button class='button-counter' onClick={reset}> Reset </button>
 
     </div>
 

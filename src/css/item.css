@@ -26,6 +26,12 @@
 
 }
 
+button {
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
 
 .item-layout-cart-button-absolute{
     display: flex;
@@ -41,7 +47,7 @@
     margin-bottom: 0.7rem;
     padding: 0.5rem;
     
-    left: 1rem;
+    left: 2rem;
 
     background-color: var(--light-green);
 
@@ -49,6 +55,13 @@
 
 
 }
+
+.item-layout-cart-button-absolute:hover{
+
+    background-color: var(--light-green-hover);
+
+}
+
 
 .item-layout-detail-button-absolute{
 

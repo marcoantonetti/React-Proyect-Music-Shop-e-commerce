@@ -9,11 +9,47 @@
     align-items: center;
     gap: 1rem;
 
+
+    width: 300px;
+    height: 350px;
+    margin: 5rem auto;
+
     position: relative;
+
+    background-color: rgba(128, 128, 128, 0.067);
+    z-index: 0;
+}
+
+
+
+.div-counter-button-container{
+    position: absolute;
+    display: flex;
+    gap: 0.5rem;
+
+    right: 2rem;
+    bottom: 1rem;
+
+    z-index: 2;
+    
+}
+
+.button-counter{
+
+    border-radius: 0.25rem;
+    border: 1px black solid;
+    background-color: rgba(163, 148, 148, 0.171);
+    padding: 0.15rem 0.2rem;
+
+    box-shadow: var(--shadow-black-box);
+
+
 
 }
 
-.div-counter-button{
-    display: flex;
-    gap: 0.25rem;
+.button-counter:hover {
+
+    background-color: rgba(163, 148, 148, 0.568);
+
+
 }

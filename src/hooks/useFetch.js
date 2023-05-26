@@ -4,10 +4,16 @@
 import React, { useEffect, useState } from 'react'
 import { allCategories } from '../objects/categories';
 
+//  A hook that fetches a filtered array of products from mercado libre API. 
+//  When a cid (category ID) parameter is passed, the hook fecthes products that matches that category. 
+//  When a id parameter is passed, the hook feches the product that matches with that ID.
+
 export const useFetch =  (cid, id, sortingMethod) => {
 
+    // URL API
     const url = "https://api.mercadolibre.com/sites/MLA/search?category=MLA1182";
     
+    // useStates
     const [products, setProducts] = useState('')
     const [error, setError] = useState (false)
     const [loading, setLoading] = useState(true)
@@ -20,6 +26,7 @@ export const useFetch =  (cid, id, sortingMethod) => {
 
                     let res = await fetch(url)
                     let resParsed = await res.json()
+
                     
                 // This reads as: if route ends with /detail/:pid. pid is passed as the id parameter
                     if (id){
@@ -45,25 +52,26 @@ export const useFetch =  (cid, id, sortingMethod) => {
                                 // Por ejemplo la categoria pianos tiene las categorias de MELI: Pianos y teclados
                                 // O la categoria 'otros' tiene 10 categorias de MELI
                                 setProducts(resParsed.results.filter((product) => {
-
-                                return category.categoryID.includes(product.category_id)
-           
-                                           }
-                                           )
-                                           )
+                                            // If mercado libre's product's categoryID is included in my category, then returns true.
+                                            return category.categoryID.includes(product.category_id)
+                                                                                    
+                                                                                  }))
            
                                 setLoading(false);
            
-                                       }, 2000)
-                                   }
-                                     }
-                                     )
-                
-                                    }
-                    
-                     
+                                       }, 2000)         
+                                    
+                                    }})
+                    } else {
 
-                    
+                        setTimeout( () => {
+
+                            setProducts(resParsed.results)
+                            setLoading(false)
+
+                        }, 2000)
+
+                    }                    
 
             }  catch {
 
@@ -72,13 +80,8 @@ export const useFetch =  (cid, id, sortingMethod) => {
                     setTimeout(() => {
                         setError(true)
                         setLoading(false);
-                    }
-                                 ,2000)
-
-
-                }
-
-           
+                                     } ,2000)
+                    }           
             }        
        
             fetchAPI()
@@ -93,36 +96,33 @@ export const useFetch =  (cid, id, sortingMethod) => {
 /*
  else {
 
-                    // Cuando no hay cid mostrar los 10 productos mas vendidos
+// Cuando no hay cid mostrar los 10 productos mas vendidos
 
-                    let featureProducts;
+let featureProducts;
 
-                    function compareSoldQuantity(a, b) {
-                        if ( a.sold_quantity < b.sold_quantity ){
-                            return 1;
+function compareSoldQuantity(a, b) {
+
+    if ( a.sold_quantity < b.sold_quantity ){
+               return 1;
                           }
-                          if ( a.sold_quantity > b.sold_quantity ){
-                            return -1;
+   if ( a.sold_quantity > b.sold_quantity ){
+                 return -1;
                           }
-                          return 0;
+                return 0;
                     }
 
-                    function sortBySoldQuantity() {
+function sortBySoldQuantity() {
 
-
-                        featureProducts = respParsed.results            
+ featureProducts = respParsed.results            
                                                                         .sort(compareSoldQuantity)
                                                                         .slice(0,10)
 
+return featureProducts;
+ }
 
-                        return featureProducts;
+ setTimeout(() => {
 
-                    }
-
-                    setTimeout(() => {
-
-                        setProducts(sortBySoldQuantity());
-                        setLoading(false);
-
-                    }, 500)
+setProducts(sortBySoldQuantity());
+setLoading(false);
+}, 500)
                 } */

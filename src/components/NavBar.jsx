@@ -1,12 +1,12 @@
 // Components imports
-import Buttons from "./Buttons"
+import NavButtons from "./NavButtons"
 import SearchBar from "./SearchBar"
-import CartWidget from "./CartWidget"
+import CartWidget from "./cart/CartWidget"
 import LogIn from "./LogIn"
 import { Link } from "react-router-dom"
 
 
-const NavBar = (props) => {
+const NavBar = (props) => {  
 
 
                 return (
@@ -25,26 +25,26 @@ const NavBar = (props) => {
                         <ul role='navigation-buttons' className="ul-navButtons-flex-row">
                             {/* La prop de classSelector es porque me parece que voy a hacer un Button componente para todo.
                              Y la clase indica que tipo de boton sera Que opinas? */}
-                            <Buttons name='Servicios'  classSelector='li-nav-button'/>
-                            <Buttons name='Categorias' classSelector='li-nav-button' link='http://localhost:5173/#categories'/>
-                            <Buttons name='Nosotros'   classSelector='li-nav-button' link='/#div-about-us'/>
+                            <NavButtons name='Servicios'  classSelector='li-nav-button'/>
+                            <NavButtons name='Categorias' classSelector='li-nav-button' link='/#categories'/>
+                            <NavButtons name='Nosotros'   classSelector='li-nav-button' link='/#div-about-us'/>
 
                         </ul>
 
-                        <ul role='navigation-buttons' className="ul-navButtons-flex-row" >
+                            <ul role='navigation-buttons' className="ul-navButtons-flex-row" >
 
-                        <SearchBar/>
+                            <SearchBar/>
 
-                        <CartWidget/>
+                            <CartWidget/>
 
-                        <LogIn/>
+                            <LogIn/>
 
-                        </ul>
+                            </ul>
+                            
                         
-                       
 
 
-                    </nav>
+                        </nav>
                     
                     </header>
                 )

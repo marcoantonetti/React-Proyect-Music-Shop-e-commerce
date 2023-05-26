@@ -1,16 +1,35 @@
-import React from 'react'
-import Buttons from './Buttons'
-import CartWidget from './CartWidget'
+import React, { useState } from 'react'
+import CartWidget from './cart/CartWidget'
 import { ItemCount } from './ItemCount'
 import { Link } from 'react-router-dom'
+import { useCartContext } from '../context/CartContext'
 
 
 export const ItemDetail = ({children}) => {
 
- const {thumbnail, title, price, condition, available_quantity
- } = children
+   const {thumbnail, title, price, condition, available_quantity} = children
+
+   const {addToCart, cartList} = useCartContext()
+   
+   const [count,setCount] = useState(0)
+
+   const bringCount = (quantity) => {
+
+    setCount(quantity)
+
+    console.log('quantity', quantity)
+    console.log('item', children)
+
+
+  }
 
   return (
+    
+
+    <>
+
+    <h3 className='h3-title'> Item Detail </h3>
+    <hr />
   
     <div className='div-item-detail-layout'>
 
@@ -26,18 +45,19 @@ export const ItemDetail = ({children}) => {
 
         <div className='item-layout-cart-button'>
 
-        <Link to='/cart' className='item-layout-cart-button-absolute'>
+        <Link onClick={()=>{addToCart({item:children, quantity:count})}} to='/cart' className='item-layout-cart-button-absolute'>
 
-        <Buttons name='Add to'/>
+        <button>Add to</button>
         <CartWidget/>
 
         </Link> 
-        <ItemCount initial={1} stock={available_quantity} min={1}/>
+        <ItemCount initial={1} stock={available_quantity} min={1} bringCount={bringCount}/>
 
         </div>
         
     </div>
 
+    </>
 
 
   )

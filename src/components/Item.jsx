@@ -1,9 +1,13 @@
 import React from 'react'
-import Buttons from './Buttons'
-import CartWidget from './CartWidget'
+import Buttons from './NavButtons'
+import CartWidget from './cart/CartWidget'
 import { Link, useParams } from 'react-router-dom'
+import { useCartContext } from '../context/CartContext'
 
-export const Item = ({img, title, subtitle, price, id}) => {
+export const Item = ({img, title, subtitle, price, id, product}) => {
+
+  const {addToCart} = useCartContext()
+
 
 
   return (
@@ -21,17 +25,16 @@ export const Item = ({img, title, subtitle, price, id}) => {
 
         <hr/>
 
+        <Link to='/cart' className='item-layout-cart-button-absolute' onClick={()=>{addToCart({item:product, quantity:1})}}>
 
-        <Link to='/cart' className='item-layout-cart-button-absolute'>
-
-        <Buttons name='Add to'/>
+        <button> Add To </button>
         <CartWidget/>
 
         </Link>
 
         <Link to= {`/detail/${id}`} className='item-layout-detail-button-absolute' >
         
-        <Buttons name='Details'/>
+        <button> Details </button>
         
         </Link>
         

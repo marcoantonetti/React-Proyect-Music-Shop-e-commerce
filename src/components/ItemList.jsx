@@ -13,12 +13,13 @@ const ItemList = ({products}) => {
             
                 <div key={index}>
 
-
                     <Item
+
                         img = {product.thumbnail} 
                         title = {product.title} 
                         price = {product.price} 
                         id={product.id}
+                        product={product}
                         
                         />
                 </div>

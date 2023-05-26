@@ -1,27 +1,35 @@
-import { useState } from 'react'
-
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
 import { ItemDetailContainer } from './components/ItemDetailContainer'
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { UrlNotFound } from './components/UrlNotFound'
 import { LandingPage } from './components/landing-page/LandingPage'
+import { CartContextProvider } from './context/CartContext'
+import { CartConteiner } from './components/cart/CartConteiner'
+import ScrollToHashElement from './functions/ScrollToHashElement'
+import { Footer } from './components/footer'
 
 
 function App() {
 
-
   return (
-    <>
 
-      <NavBar/>
+    <CartContextProvider>
 
+    <BrowserRouter>
+    
+    <ScrollToHashElement /> {/* This component allows the use of internal links and enables smooth scrolling*/}
+
+     <NavBar/>
+    
      <Routes>
 
 
-      <Route exact path='/' element={<LandingPage/>}/>
-      <Route exact path='/categories/:cid' element={<ItemListContainer title='catalogo'/>}/>
+      <Route  path='/' element={<LandingPage/>}/>
+      <Route exact path='/categories/:cid' element={<ItemListContainer title='Catalogo'/>}/>
+      <Route  path='/#categories' element={<LandingPage/>}/>
       <Route exact path='/detail/:pid' element={<ItemDetailContainer/>}  />
+      <Route exact path='/cart' element={<CartConteiner/>}  />
       <Route exact path='/404error' element={<UrlNotFound/>}  />
 
       {/* <Route exact path='*' element={<Navigate to={'404error'}/>}/> */}
@@ -29,8 +37,11 @@ function App() {
     </Routes>
 
 
-      
-    </>
+    <Footer/>
+    </BrowserRouter>
+
+   </CartContextProvider>
+
 
   )
 }

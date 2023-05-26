@@ -15,7 +15,6 @@ export const Categories = () => {
     {categories.map((category, index) => 
 
         
-
     <Link key={index} to={`/categories/${category.category}`}>
         {/* <h2>{category.category}</h2> */}
     <img alt={category.category} src={category.img} className='img-category'></img>
