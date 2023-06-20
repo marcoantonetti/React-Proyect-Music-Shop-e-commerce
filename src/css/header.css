@@ -2,11 +2,12 @@
     display: flex;
     flex-direction: column;
 
-    background-color: var(--header-lightgrey-translucent);
+    background-color: var(--light-gray);
 
     font-size: 1.2rem;
     color: black;
-    width: 100%
+    width: 100%;
+    z-index: 3;
 
     
 }
@@ -14,6 +15,7 @@
 /* Style and positioning of main logo */
 
 .link-main-logo-center{
+
     display: flex;
     height: 8rem;
 
@@ -24,7 +26,7 @@
 .img-main-logo{
     height: 100%;
     width: 8rem;
-    margin: auto;
+    margin: 0.5rem auto;
 
 }
 

@@ -3,6 +3,7 @@ import { Categories } from './categories'
 import { Services } from './Services'
 import { allServices } from '../../objects/allServices'
 import ItemListContainer from '../ItemListContainer'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 export const LandingPage = () => {
@@ -27,11 +28,11 @@ export const LandingPage = () => {
 
             <section className="section-top-selling-products">
 
-                <ItemListContainer title='Top Selling Products' attribute='sold_quantity'/>
+                <ItemListContainer title='Top Selling Products' attribute='sold_quantity' top10 = {true}/>
 
             </section>
            
-            <section id='div-about-us' className='div-about-us'>
+            <section  className='section-about-us'>
 
             <h2 className='h2-subtitle'>About Us</h2>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste tenetur mollitia qui, sed eaque, voluptates veritatis at, quis possimus libero quia beatae ea adipisci dolorum aperiam asperiores unde distinctio delectus?</p>

@@ -9,7 +9,7 @@ import { sortByAttribute } from '../functions/filteredProducts'
 
 const ItemListContainer = (props) => {
 
-    const {title, attribute} = props ;
+    const {title, attribute, top10} = props ;
     // const {items, setItems} = useState([])
 
     const { cid } = useParams()
@@ -18,6 +18,7 @@ const ItemListContainer = (props) => {
     const {products, loading, error} = useFetch(cid)
 
     let sortedProducts;
+    let top10Products;
 
    if (attribute){
 
@@ -25,18 +26,30 @@ const ItemListContainer = (props) => {
 
    }
 
-   console.log('ordenado',sortedProducts)
+   if(top10){
+
+        top10Products = sortedProducts 
+                                      .slice()
+                                      .splice(0,10)
+
+   }
+
+
+
+   console.log('ordenado',top10Products)
 
     return (
 
-        <section className='section-itemListcontainer-auto'>
+        <section className={top10 ? 'section-itemlistconteiner-top10' : 'section-itemListcontainer'}>
 
-            <h3 className='h3-title'>{title}</h3>
+            <h3 className={top10 ? 'top10-h3-title-centered' : 'h3-title'}>{title}</h3>
             <hr />
 
             {loading ?
-                <><p>Loading our products</p>
-                    <FontAwesomeIcon icon={faSpinner} className='fa-spin' /> </>
+
+                <> <p>Loading our products</p>
+                    <FontAwesomeIcon icon={faSpinner} className='fa-spin' /> 
+                </>
 
                 :
 
@@ -44,13 +57,23 @@ const ItemListContainer = (props) => {
                     <p>We are sorry. An internal error has occured</p>
                     :
 
-                items ? 
+                top10 ? 
 
-                    <ItemList products={products} />
+                <div className='div-itemList-top10-container'>
 
-                    :
+                    {/* <button> <i className= "prev-arrow arrow-slider fa-solid fa-arrow-left"></i> </button>   */}
 
-                    <ItemList products={items} />
+                    <ItemList products={top10Products} slider={true} />
+
+                    {/* <button> <i className= "next-arrow arrow-slider fa-solid fa-arrow-right"></i> </button> */}
+
+
+                </div>
+
+                
+                :
+                
+                <ItemList products={products}  slider={false}   />
 
 
             }

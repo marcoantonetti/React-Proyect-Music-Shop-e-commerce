@@ -1,17 +1,20 @@
 import React from 'react'
 import { Item } from './Item'
 
-const ItemList = ({products}) => {
+const ItemList = ({products, slider}) => {
 
 
 
     return (
 
-        <div className='div-itemList-flex-container'>
+
+
+
+        <div className={slider? 'div-itemList-top10' : 'div-itemList-flex-container'}>
 
             {products.map ( (product, index) => 
             
-                <div key={index}>
+                <div className='container' key={index}>
 
                     <Item
 
@@ -22,8 +25,8 @@ const ItemList = ({products}) => {
                         product={product}
                         
                         />
-                </div>
 
+                </div>
                 
                 )}
 

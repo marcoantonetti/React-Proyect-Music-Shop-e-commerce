@@ -21,5 +21,13 @@ export const sortByAttribute = (attribute, [...products]) => {
 
     }
 
+export const bringTop10Products = (array) => {
+
+                const newArray = array
+
+            return array.splice(0,10)
+
+    }
+
 
 

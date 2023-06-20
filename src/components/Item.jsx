@@ -9,7 +9,6 @@ export const Item = ({img, title, subtitle, price, id, product}) => {
   const {addToCart} = useCartContext()
 
 
-
   return (
 
 

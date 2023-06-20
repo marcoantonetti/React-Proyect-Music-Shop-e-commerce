@@ -8,11 +8,7 @@ main{
     align-items: center;
     text-align: center;
 
-
-
 }
-
-
 
 
 .img-cover{
@@ -60,7 +56,6 @@ main{
 
 /* Style and positioning for services section */
 
-
 .section-our-services{
     display: flex;
     gap: 3rem;
@@ -69,6 +64,9 @@ main{
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    background-color: white;
+
 
 }
 
@@ -82,6 +80,8 @@ main{
 
 }
 
+/* Style and positioning for top selling section */
+
 .section-top-selling-products{
 
     display: flex;
@@ -90,17 +90,100 @@ main{
     align-items: center;
     justify-content: center;
 
-    margin-left: 10rem;
+    height: 30rem;
+
+    position: relative;
+        
+    
+}
+
+
+.section-itemlistconteiner-top10{
+
+    
+}
+
+.div-itemList-top10-container{
+
+    border: red 1px solid;
+    width: 80rem;
+    margin: auto;
     overflow: hidden;
 
 
-    height: 22rem;
-    width: 100%;
+}
+
+.div-itemList-top10{
+
+
+    /* scss mixin */
+    display: flex;
+    justify-content: center;
+    gap: 1.3rem;
+    animation: 20s slider infinite;
+
+
+    width: 200%;
+
+    margin: 0 auto;
+
+    padding: 1rem 5rem;
+    background-color: var(--translucid-black-background);
+    
+
+}
+
+.div-itemList-top10:hover{
+    animation-play-state: paused;
+
+}
+
+.arrow-slider{
+
+    width: 2rem;
+    height: 2rem;
+
+    background-color: var(--translucid-black-background);
+    padding-top: 0.5rem;
+
+    border-radius: 0.2rem;
+    border: none;
+
+    opacity: 0.75;
+    color: rgb(26, 24, 24);
+
+    cursor: pointer;
+
+}
+
+.prev-arrow{
+
+    position: absolute;
+    right: 40rem;
+
+}
+
+.next-arrow{
+
+    position: absolute;
+    right: 40rem;
+
 
 }
 
 
-.div-about-us{
+
+.top10-h3-title-centered{
+
+    margin: 0 0 2rem 0;
+    
+}
+
+
+/* Style and positioning for about us section */
+
+
+.section-about-us{
     display: flex;
     flex-direction: column;
 
