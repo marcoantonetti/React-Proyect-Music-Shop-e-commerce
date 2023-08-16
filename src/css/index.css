@@ -2,36 +2,74 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: black;
-
- 
-    
 
     --header-lightgrey-translucent: rgba(128, 128, 128, 0.326);
     --header-darkergrey-translucent: rgba(128, 128, 128, 0.223);
     --light-green: rgb(173, 255, 47);
-    --light-green-hover: rgb(150, 249, 2);
+    --light-green-hover: rgb(63, 228, 3);
 
     --light-gray: rgb(213, 210, 210);
+    --light-gray-hover: rgb(182, 180, 180);
     --shadow-black-box: 0.05rem 0.05rem 0.20rem rgb(105, 99, 99), -0.05rem -0.05rem 0.20rem rgb(105, 100, 100);
+    --shadow-blacker-box: 0.08rem 0.08rem 0.20rem rgb(3, 3, 3), -0.08rem -0.08rem 0.20rem rgb(0, 0, 0);
+    --shadow-white-box: 0.15rem 0.15rem 0.20rem rgb(239, 232, 232), -0.15rem -0.15rem 0.20rem rgb(239, 232, 232);
 
-    --translucid-black-background: rgba(58, 55, 55,0.7)
+    --translucid-black-background: rgba(43, 39, 50, 0.35);
+    --less-translucid-black-background: rgba(43, 39, 50, 0.5);
+    --more-translucid-black-background: rgba(159, 151, 151, 0.3);
+
+    --white: rgba(255, 255, 255, 0.858)
+
 
 }
 
-
-
-li {
-    list-style-type: none;
-}
-
-a, i{
-    text-decoration: none;
-}
 
 
 body{
 
     background-image: url('/images/wallpaper.jpg');
     overflow-x: hidden;
+    font-family: Calisto MT;
+
+}
+
+li {
+    list-style-type: none;
+}
+
+hr{
+    
+    height: 0.25rem;
+    background-color: white;
+    border-radius: 1rem;
+
+    width: 45rem;
+    margin: auto auto 2rem auto;
+
+}
+
+a, i{
+
+    text-decoration: none;
+    color: black;
+}
+
+.h3-title-landing, .h2-subtitle, .services-h3, .top10-h3-title-centered {
+
+    color: white;
+    font-size: 2rem;
+
+}
+
+.h3-title-landing{
+    width: 100%;
+    margin: 0.5rem auto 0.5rem auto;
+
+}
+
+.p-services, .p-about-us  {
+
+    color: white;
+    font-size: 1.1rem;
+
 }

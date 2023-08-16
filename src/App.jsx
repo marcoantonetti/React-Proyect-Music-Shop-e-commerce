@@ -26,7 +26,7 @@ function App() {
 
 
       <Route  path='/' element={<LandingPage/>}/>
-      <Route exact path='/categories/:cid' element={<ItemListContainer title='Catalogo'/>}/>
+      <Route exact path='/categories/:cid' element={<ItemListContainer />}/>
       <Route  path='/#categories' element={<LandingPage/>}/>
       <Route exact path='/detail/:pid' element={<ItemDetailContainer/>}  />
       <Route exact path='/cart' element={<CartConteiner/>}  />

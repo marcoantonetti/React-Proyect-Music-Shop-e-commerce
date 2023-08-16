@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom'
 import { useCartContext } from '../context/CartContext'
 
 
-export const ItemDetail = ({children}) => {
+export const ItemDetail = ({ children }) => {
 
-   const {thumbnail, title, price, condition, available_quantity} = children
+  const { thumbnail, title, price, condition, available_quantity, seller, shipping } = children
 
-   const {addToCart, cartList} = useCartContext()
-   
-   const [count,setCount] = useState(0)
+  const { addToCart, cartList } = useCartContext()
 
-   const bringCount = (quantity) => {
+  const [count, setCount] = useState(0)
+
+  const bringCount = (quantity) => {
 
     setCount(quantity)
 
@@ -23,39 +23,90 @@ export const ItemDetail = ({children}) => {
 
   }
 
+  let cropedTitle = title.split(' ', 5)
+    .join(' ')
+
+  if (cropedTitle.length > 30) {
+
+    cropedTitle = cropedTitle.slice(0, cropedTitle.lastIndexOf(' '))
+
+  }
+
   return (
-    
+
 
     <>
 
-    <h3 className='h3-title'> Item Detail </h3>
-    <hr />
-  
-    <div className='div-item-detail-layout'>
 
-        <img src={thumbnail} alt=''/>
+      <div className='div-item-detail-layout-flexrow'>
 
-        <h3>{title}</h3>
+        <div>
 
-        <h4>Condition: {condition}</h4>
+          <h3 className='h3-item-detail-title' >{cropedTitle}</h3>
 
-        <p>${price}</p>
-
-        <hr/>
-
-        <div className='item-layout-cart-button'>
-
-        <Link onClick={()=>{addToCart({item:children, quantity:count})}} to='/cart' className='item-layout-cart-button-absolute'>
-
-        <button>Add to</button>
-        <CartWidget/>
-
-        </Link> 
-        <ItemCount initial={1} stock={available_quantity} min={1} bringCount={bringCount}/>
+          <img className='img-item-detail' src={thumbnail} alt='' />
 
         </div>
-        
-    </div>
+
+        <div className='div-item-description-flexcol-container'>
+
+
+          <div className='div-item-description-flexrow-child'>
+
+            <div className='div-flex-item'>
+
+              <p> Condition: <strong>{condition}</strong></p>
+
+              <p> Stock: <strong>{available_quantity}</strong></p>
+
+              <p> Price: <strong><span>${price}</span></strong></p>
+
+            </div>
+
+            <div className='div-flex-item'>
+
+              <p> Seller: &nbsp;
+
+                <Link to={seller.permalink}>
+
+                  <strong><u>{seller.nickname.toLowerCase()}</u></strong>
+
+                </Link>
+
+              </p>
+
+              <p> Cancellation: <strong>{seller.seller_reputation.metrics.cancellations.period}</strong></p>
+
+              <p> Free-shipping <strong>{shipping.free_shipping ? 'Yes' : 'No'}</strong></p>
+
+            </div>
+
+          </div>
+
+          <div className='item-layout-cart-button'>
+
+            <div>
+
+            <Link onClick={() => { addToCart({ item: children, quantity: count }) }} to='/cart' className='itemdetail-cart-button'>
+
+              <button>Add to</button>
+              <CartWidget />
+
+            </Link>
+
+            </div>
+
+            
+            <div>
+            <ItemCount initial={1} stock={available_quantity} min={1} bringCount={bringCount} />
+            </div>
+            
+          </div>
+
+        </div>
+
+
+      </div>
 
     </>
 

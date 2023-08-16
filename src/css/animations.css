@@ -1,56 +1,74 @@
 @keyframes slider {
     0%{
 
-transform: translateX(-10rem)
+transform: translateX(-5rem)
 
     }
 
-    20%{
+    10%{
 
 transform: translateX(-20rem)
 
     }
 
-    25%{
+    20%{
 
 transform: translateX(-30rem)
 
     }
 
-    45%{
+    30%{
 
 transform: translateX(-40rem)
 
     }
 
-    50%{
+    40%{
 
 transform: translateX(-50rem)
 
     }
 
-    70%{
+    50%{
 
 transform: translateX(-60rem)
 
+ 
     }
 
-    75%{
+    60%{
 
 transform: translateX(-70rem)
 
     }
 
-    95%{
+    70% {
 
-transform: translateX(-80rem)
+        transform: translateX(-80rem)
 
     }
+
+    80% {
+
+        transform: translateX(-90rem)
+
+    }
+
+    
+    90%{
+
+        transform: translateX(-105rem)
+        
+
+   }
 
     100%{
 
-transform: translateX(-10rem)
+         transform: translateX(-10rem)
+         
 
     }
+
+
 
 }

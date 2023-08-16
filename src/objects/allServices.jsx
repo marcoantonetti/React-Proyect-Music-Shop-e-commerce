@@ -6,20 +6,20 @@ export const allServices = [
     {
 
     title: 'Shipping',
-    icon: <FontAwesomeIcon className='fontawesome-service-icon' icon={faPaperPlane} bounce style={{color: "#dd910e"}}/>,
-    text: 'We make shippings to all over the country, shipping price can be seen prior to purchase',
+    icon: <FontAwesomeIcon className='fontawesome-service-icon' icon={faPaperPlane} bounce/>,
+    text: 'We make shippings to all over the country, shipping prices can be seen prior to purchase',
 
 
 },{
 
     title: 'Gather up Points',
-    icon: <FontAwesomeIcon className='fontawesome-service-icon' icon={faArrowRightArrowLeft} bounce style={{color: "#dd910e"}} />,
-    text: 'Each purchase gathers up points which can be use for special deals'
+    icon: <FontAwesomeIcon  className='fontawesome-service-icon' icon={faArrowRightArrowLeft} bounce />,
+    text: 'Each purchase gathers up points which then can be use for special deals'
 
 },{
 
     title: 'Discounts',
-    icon: <FontAwesomeIcon className='fontawesome-service-icon' bounce icon={faPercent} />,
-    text: 'Access to 10% discount if you had already purchased 3 or more products'
+    icon: <FontAwesomeIcon className='fontawesome-service-icon'  icon={faPercent} bounce />,
+    text: 'Access to a 10% discount if you had already purchased 3 or more products'
 
 }]

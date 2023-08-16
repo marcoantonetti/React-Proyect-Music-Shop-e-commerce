@@ -8,21 +8,28 @@ export const Item = ({img, title, subtitle, price, id, product}) => {
 
   const {addToCart} = useCartContext()
 
+  let cropedTitle = title.split(' ', 5)
+                           .join(' ')
+
+  if (cropedTitle.length > 30){
+
+    cropedTitle = cropedTitle.slice(0, cropedTitle.lastIndexOf(' '))
+
+  }
+
 
   return (
 
 
     <div className='div-item-layout-relative'>
 
-        <img src={img} alt=''/>
+        <img className='img-item-layout' src={img} alt=''/>
 
-        <h3 >{title}</h3>
-
-        <h4>{subtitle}</h4>
+        <h3 >{cropedTitle}</h3>
 
         <p>${price}</p>
 
-        <hr/>
+        <hr className='hr-0-margin'/>
 
         <Link to='/cart' className='item-layout-cart-button-absolute' onClick={()=>{addToCart({item:product, quantity:1})}}>
 

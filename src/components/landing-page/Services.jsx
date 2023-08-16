@@ -9,8 +9,6 @@ export const Services = ({children}) => {
 
   return (
 
-
-
       <>
        { children.map((service, index)=>
 
@@ -23,7 +21,7 @@ export const Services = ({children}) => {
                 {service.title}
             </h3>
 
-            <p className="services-p">
+            <p className="p-services">
                 {service.text}
             </p>
 

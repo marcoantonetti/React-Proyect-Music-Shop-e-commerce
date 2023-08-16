@@ -38,7 +38,7 @@ export const useFetch =  (cid, id, sortingMethod) => {
                                  
                                           }, 500)
                                 } 
-                // This reads as: if route ends with /categories/:cid. cid is passed as the cid parameter
+                // This reads as: if route ends with /categories/:cid. cid param is passed as the cid parameter
                     else if(cid){
 
                         allCategories.forEach((category) => {
@@ -93,36 +93,3 @@ export const useFetch =  (cid, id, sortingMethod) => {
 }
 
 
-/*
- else {
-
-// Cuando no hay cid mostrar los 10 productos mas vendidos
-
-let featureProducts;
-
-function compareSoldQuantity(a, b) {
-
-    if ( a.sold_quantity < b.sold_quantity ){
-               return 1;
-                          }
-   if ( a.sold_quantity > b.sold_quantity ){
-                 return -1;
-                          }
-                return 0;
-                    }
-
-function sortBySoldQuantity() {
-
- featureProducts = respParsed.results            
-                                                                        .sort(compareSoldQuantity)
-                                                                        .slice(0,10)
-
-return featureProducts;
- }
-
- setTimeout(() => {
-
-setProducts(sortBySoldQuantity());
-setLoading(false);
-}, 500)
-                } */

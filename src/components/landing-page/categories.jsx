@@ -10,7 +10,7 @@ export const Categories = () => {
 
   return (
 
-    <div className='hola'>
+    <div className='div-container-categories-flexwrap'>
 
     {categories.map((category, index) => 
 
