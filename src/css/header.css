@@ -1,4 +1,4 @@
-.header-flex-column{
+.header-flex-column {
     display: flex;
     flex-direction: column;
 
@@ -9,12 +9,15 @@
     width: 100%;
     z-index: 3;
 
-    
+    position: sticky;
+    top: -0rem;
+
+
 }
 
 /* Style and positioning of main logo */
 
-.link-main-logo-center{
+.link-main-logo-center {
 
     display: flex;
     height: 8rem;
@@ -23,7 +26,7 @@
 
 }
 
-.img-main-logo{
+.img-main-logo {
     height: 100%;
     width: 8rem;
     margin: 0.5rem auto;
@@ -31,42 +34,192 @@
 }
 
 /* Style and positioning of nav bar links */
-.nav-navBar-flex-row-space-between{
+.nav-navBar-flex-row-space-between {
     display: flex;
     justify-content: space-between;
+    
+
     align-items: center;
 
     height: 3rem;
-    /* background-color:  var(--header-darkergrey-translucent); */
 }
 
 /* Positioning of nav bar buttons */
 
-.ul-navBar-flex-row{
+.ul-navBar-flex-row {
     display: flex;
 }
 
-.ul-navButtons-flex-row{
+.ul-navButtons-flex-row {
     display: flex;
     margin-left: 2rem;
     gap: 3rem;
+
+    transition: all 2s ease;
+
 }
 
-.ul-navButtons-flex-row:last-child{
+.ul-navButtons-flex-row:last-child {
     gap: 1rem;
     margin-right: 1rem;
+
+    position: absolute;
+    right: 0rem;
+
+}
+
+/* This is toggled (via ternary operator in the className) when hamburguer button is clicked */
+
+.ul-navButtons-flex-column {
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 2;
+
+    width: 70%;
+
+    transform: translateX(-100rem);
+    transition: all 3s ease;
+
+    border-radius: 0rem 0rem 1rem 1rem;
+    padding: 2rem 1rem 1rem 2rem;
+    margin: 15rem 0rem 0rem 0rem;
+
+    gap: 3rem;
+
+    background-color: var(--light-gray);
+
+
+
+
 }
 
 /* Style of Nav Bar buttons */
-.li-nav-button{
-    font-weight:  500;
+.li-nav-button {
+    font-weight: 500;
+    width: 6rem;
+
+}
+
+.li-nav-button:hover {
+
+    font-weight: bolder;
 
 }
 
 
-.search-bar-logo-flex-row{
+
+.search-bar-logo-flex-row {
     display: flex;
 
     gap: 0.6rem;
 }
 
+.search-bar-logo-flex-row i {
+  
+    cursor: pointer;
+
+}
+
+.translate-search-bar{
+
+    transition: all 1s ease;
+    transform: translateY(-100rem);
+
+}
+
+.bring-search-bar{
+
+    transition: all 1s ease;
+    transform: translateY(0rem);
+
+}
+
+/* Style for hamburger button */
+
+.header__hamburguer-button {
+    color: black;
+    position: absolute;
+    left: 1rem;
+    top: 8.8rem;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+
+    gap: 0.2rem;
+
+    height: 1.5rem;
+    width: 2.3rem;
+    
+    transition: all 0.5s ease;
+    z-index: 4;
+
+}
+
+/* when clicked, this className will be applied */
+.header__hamburguer-button.rotate {
+
+    transform: rotate(-90deg);
+    transition: all 0.5s ease;
+
+
+}
+
+.header__hamburguer-bar {
+    display: none;
+
+    background-color: black;
+    height: 0.2rem;
+    width: 90%;
+    border-radius: 0.5rem;
+
+    transition: all 0.5s ease;
+
+
+}
+
+
+/* Media queries */
+
+
+@media (max-width: 740px) {
+
+    .header__hamburguer-bar{
+
+        display: block;
+        
+
+    }
+
+    .header__hamburguer-bar-rotate{
+
+        display: block;
+
+    }
+
+    .ul-navButtons-flex-row:first-child {
+
+        display: block;
+        transform: translateX(-100rem);
+
+        transition: all 0.5s ease;
+
+
+    }
+
+
+    .ul-navButtons-flex-column {
+
+        transform: translateX(0rem);
+        transition: all 0.5s ease;
+
+
+    }
+
+    
+
+}   

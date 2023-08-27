@@ -2,6 +2,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
+    /* Background-colors */
 
     --header-lightgrey-translucent: rgba(128, 128, 128, 0.326);
     --header-darkergrey-translucent: rgba(128, 128, 128, 0.223);
@@ -10,15 +12,51 @@
 
     --light-gray: rgb(213, 210, 210);
     --light-gray-hover: rgb(182, 180, 180);
+    
+
+    --translucid-black-background: rgba(43, 39, 50, 0.35);
+    --translucid-white-background: rgba(255, 255, 255, 0.35);
+    --less-translucid-black-background: rgba(43, 39, 50, 0.5);
+    --more-translucid-black-background: rgba(159, 151, 151, 0.3);
+
+    --white: rgba(255, 255, 255, 0.858);
+
+    /* Shadow boxes */
+
     --shadow-black-box: 0.05rem 0.05rem 0.20rem rgb(105, 99, 99), -0.05rem -0.05rem 0.20rem rgb(105, 100, 100);
     --shadow-blacker-box: 0.08rem 0.08rem 0.20rem rgb(3, 3, 3), -0.08rem -0.08rem 0.20rem rgb(0, 0, 0);
     --shadow-white-box: 0.15rem 0.15rem 0.20rem rgb(239, 232, 232), -0.15rem -0.15rem 0.20rem rgb(239, 232, 232);
 
-    --translucid-black-background: rgba(43, 39, 50, 0.35);
-    --less-translucid-black-background: rgba(43, 39, 50, 0.5);
-    --more-translucid-black-background: rgba(159, 151, 151, 0.3);
+       /* variables for responsive design */
 
-    --white: rgba(255, 255, 255, 0.858)
+       --bg-height: 370px;
+       --bg-margin: 5rem 5rem 5rem 10rem;
+       --bg-layout-width: 60%;
+   
+       --bg-img-height: 13rem;
+       --bg-img-width: 20rem;
+   
+   
+       --med-height: 570px;
+   
+       --sm-height: 600px;
+       --sm-layout-width: 90%;
+   
+   
+       /* gaps */
+   
+       --big-gap: 3rem;
+       --medium-gap: 2rem;
+       --small-gap: 1rem;
+       --xsmall-gap: 0.5rem;
+   
+       /* font size */
+   
+       --bg-font-size: 1rem;
+   
+       --sm-font-size: 1.2rem;
+   
+       --bigger-font-size: 1.5rem;
 
 
 }
@@ -71,5 +109,16 @@ a, i{
 
     color: white;
     font-size: 1.1rem;
+
+}
+
+
+@media(max-width: 900px) {
+
+    hr {
+
+        width: 100vw;
+
+    }
 
 }

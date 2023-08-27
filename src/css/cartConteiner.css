@@ -1,0 +1,210 @@
+.cart-div-conteiner{
+
+    background-color: var(--white);
+
+    width: var(--bg-layout-width);
+    height: auto;
+    margin: auto auto 3rem auto;
+
+    border-radius: 1rem;
+
+    padding: 2rem;
+
+}
+
+.div-cart-item-conteiner-flex-row{
+
+    display: flex;
+    margin: 2rem auto 3rem auto;
+    gap: var(--big-gap);
+    
+
+}
+
+.cart-div-title-img-flex-column{
+
+    display: flex;
+    flex-direction: column;
+   
+
+    gap: var(--medium-gap);
+    width: 50%;
+
+}
+
+.h4-title{
+
+    text-align: center;
+    width: 23rem;
+
+    margin: auto;
+
+
+}
+
+.img-item-detail.smaller{
+
+    margin: auto;
+
+    width: 12rem;
+    height: 10rem;
+
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-black-box);
+
+}
+
+.cart-div-item-buttons-info{
+
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-top: 3rem;
+    gap: var(--big-gap);
+    
+}
+
+.cart-div-item-buttons-info div p:last-child {
+
+    text-transform: capitalize;
+
+}
+
+.cart-div-item-buttons-info span {
+    
+    color: red;
+    
+}
+
+.cart-div-item-buttons{
+
+    position: relative;
+    display: flex;
+    
+    gap: var(--small-gap);
+    align-self: center;
+
+    width: 9rem;
+
+
+}
+
+.trashcan-icon{
+
+    position: absolute;
+    right: 0.4rem;
+    top: 0.36rem;
+
+    padding: 0.25rem;
+    border: 0.1px solid rgba(255, 0, 0, 0.185);
+    border-radius: 0.25rem;
+
+    background-color: rgba(240, 163, 163, 0.547);
+    cursor: pointer;
+
+}
+
+.trashcan-icon:hover {
+
+    transform: scale(1.1);
+    background-color: rgba(232, 124, 124, 0.799);
+
+
+}
+
+.cart-hr {
+    width: 100%;
+
+}
+
+@media (max-width: 1244px) {
+
+    
+
+    .cart-div-item-buttons-info{
+
+        gap: 0.5rem;
+    }
+
+    .trashcan-icon{
+
+        right: 0rem;
+    }
+
+}
+
+@media (max-width: 1080px){
+
+    
+    .trashcan-icon{
+
+        right: 3rem;
+        top: 2.5rem;
+    }
+  
+
+}
+
+@media(max-width: 880px){
+
+    .cart-div-item-buttons-info{
+
+        flex-direction: column;
+        gap: 0rem;
+
+    }
+
+    .cart-div-title-img-flex-column{
+
+    }
+
+    .div-cart-item-conteiner-flex-row{
+
+        margin: 0rem 0rem 2rem 0rem;
+        flex-direction: column;
+        gap: 0rem;
+
+    }
+
+    .h4-title{
+
+        width: 18rem;
+
+    }
+
+    .img-item-detail.smaller {
+
+        margin-left: 2rem;
+
+    }
+ 
+
+   .trashcan-icon{
+
+    right: 0.4rem;
+    top: 0.36rem;
+   }
+
+ 
+
+    .div-counter-button-container{
+
+
+    }
+
+}
+
+@media(max-width: 370px) {
+
+    .h4-title {
+
+        width: 11rem;
+
+    }
+
+    .img-item-detail.smaller{
+
+        margin: 0rem;
+    }
+
+}

@@ -40,7 +40,7 @@ export const ItemDetail = ({ children }) => {
 
       <div className='div-item-detail-layout-flexrow'>
 
-        <div>
+        <div className='div-h3-img-container'>
 
           <h3 className='h3-item-detail-title' >{cropedTitle}</h3>
 
@@ -87,7 +87,7 @@ export const ItemDetail = ({ children }) => {
 
             <div>
 
-            <Link onClick={() => { addToCart({ item: children, quantity: count }) }} to='/cart' className='itemdetail-cart-button'>
+            <Link onClick={() => { addToCart({ item: children, quantity: count }) }} className='itemdetail-cart-button'>
 
               <button>Add to</button>
               <CartWidget />

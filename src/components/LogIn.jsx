@@ -4,8 +4,10 @@ export default function LogIn() {
   return (
     <li >
         <a  href="">
+          
             <i className="fa-solid fa-user"></i>
-            </a>
+        
+        </a>
     </li>
     )
 }

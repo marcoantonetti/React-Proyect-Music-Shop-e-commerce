@@ -1,41 +1,7 @@
 /* Styles and positioning of the product detail card */
-*{
-
-/* variables for responsive design */
-
-    --bg-height: 370px;
-    --bg-margin: 5rem 5rem 5rem 10rem;
-    --bg-layout-width: 60%;
-
-    --bg-img-height: 13rem;
-    --bg-img-width: 20rem;
 
 
-    --med-height: 570px;
-
-    --sm-height: 600px;
-    --sm-layout-width: 90%;
-
-
-    /* gaps */
-
-    --big-gap: 3rem;
-    --medium-gap: 2rem;
-    --small-gap: 1rem;
-    --xsmall-gap: 0.5rem;
-
-    /* font size */
-
-    --bg-font-size: 1rem;
-
-    --sm-font-size: 1.2rem;
-
-    --bigger-font-size: 1.5rem;
-
-}
-
-
-.div-item-detail-layout-flexrow{
+.div-item-detail-layout-flexrow {
 
     display: flex;
     flex-direction: row;
@@ -47,7 +13,7 @@
     gap: var(--small-gap);
 
 
-    width:  var(--bg-layout-width);
+    width: var(--bg-layout-width);
     height: var(--bg-height);
     margin: var(--bg-margin);
 
@@ -59,7 +25,15 @@
     z-index: 0;
 }
 
-.h3-item-detail-title{
+.div-h3-img-container{
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.h3-item-detail-title {
 
     width: 18rem;
     text-align: center;
@@ -69,28 +43,30 @@
 
 }
 
-.img-item-detail{
+.img-item-detail {
 
     height: var(--bg-img-height);
     width: --bg-img-width;
-    margin: 0rem 0rem 0rem 2rem;
+    margin: 0rem 0rem 0rem 4rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-black-box);
 
     background-size: contain;
 
 }
 
-.div-item-description-flexcol-container{
+.div-item-description-flexcol-container {
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-self: center;
-            
-            margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+
+    margin: auto;
 
 }
 
-.div-item-description-flexrow-child{
+.div-item-description-flexrow-child {
 
     display: flex;
     flex-direction: row;
@@ -109,9 +85,15 @@
 
 }
 
-.div-item-description-flexrow-child span{
+.div-item-description-flexrow-child span {
 
     color: red;
+
+}
+
+.div-flex-item p:first-child{
+
+    text-transform: capitalize;
 
 }
 
@@ -124,11 +106,11 @@
     gap: var(--medium-gap);
     font-size: var(--bg-font-size);
 
-    
+
 }
 
-.itemdetail-cart-button{
-    
+.itemdetail-cart-button {
+
     display: flex;
 
     gap: var(--xsmall-gap);
@@ -139,20 +121,20 @@
     border-radius: 0.25rem;
     width: 7rem;
     padding: 0.5rem;
-    
+
     cursor: pointer;
 
 
 }
 
-.itemdetail-cart-button:hover{
+.itemdetail-cart-button:hover {
 
     background-color: var(--light-green-hover);
     transform: scale(1.05);
 
 }
 
-.div-counter-button-container{
+.div-counter-button-container {
 
 
     display: flex;
@@ -160,10 +142,10 @@
     padding-top: 0.5rem;
 
     z-index: 2;
-    
+
 }
 
-.button-counter{
+.button-counter {
 
     border-radius: 0.25rem;
     border: 1px black solid;
@@ -172,6 +154,7 @@
 
     box-shadow: var(--shadow-black-box);
 
+    text-transform: capitalize;
 
 
 }
@@ -186,7 +169,7 @@
 
 @media (max-width: 1080px) {
 
-    .div-item-detail-layout-flexrow{
+    .div-item-detail-layout-flexrow {
 
         flex-direction: column;
 
@@ -199,36 +182,52 @@
 
     }
 
-    .item-layout-cart-button{
+    .item-layout-cart-button {
 
         margin-left: 2rem;
         font-size: var(--sm-font-size);
 
+    }
+
+    .img-item-detail{
+
+        margin: auto;
 
     }
-    
+
 }
 
-@media (max-width: 605px){
+@media(max-width:700px){
 
-    .div-item-detail-layout-flexrow{
+    .div-item-description-flexrow-child{
+
+        gap: var(--xsmall-gap);
+
+    }
+
+}
+
+@media (max-width: 605px) {
+
+    .div-item-detail-layout-flexrow {
 
         height: var(--sm-height);
 
     }
 
 
-    .div-item-description-flexrow-child{
+    .div-item-description-flexrow-child {
 
         flex-direction: column;
         gap: var(--small-gap);
     }
-    
 
-    .item-layout-cart-button{
 
-        margin-left: 0rem;
+    .item-layout-cart-button {
+
+        margin-left: 1rem;
         padding-right: 5rem;
+
 
     }
 
@@ -236,12 +235,12 @@
 
 @media (max-width: 590px) {
 
-    .img-item-detail{
+    .img-item-detail {
 
         width: 280px;
     }
 
-    .div-item-detail-layout-flexrow{
+    .div-item-detail-layout-flexrow {
 
         width: var(--sm-layout-width);
 

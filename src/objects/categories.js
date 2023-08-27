@@ -36,12 +36,6 @@ categoryID: ['MLA29272'],
 img: '/images/Categories/cuerdas.png'
 }
 
-const usados = {
-category: 'Usados',
-img: '/images/Categories/Usados.png'
-}
-
-
 const otros= {
 
 category: 'Otros',
@@ -50,4 +44,4 @@ img: '/images/Categories/Otros.png'
 
 }
 
-export const allCategories = [acousticGuitar, electricGuitar, pianos, microphones, cuerdas, usados, otros]
+export const allCategories = [acousticGuitar, electricGuitar, pianos, microphones, cuerdas, otros]

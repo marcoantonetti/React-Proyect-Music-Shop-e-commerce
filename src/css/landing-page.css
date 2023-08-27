@@ -1,4 +1,4 @@
-main{
+main {
     display: flex;
     flex-direction: column;
 
@@ -11,26 +11,26 @@ main{
 }
 
 
-.img-cover{
-    
+.img-cover {
+
     object-fit: cover;
     height: 40rem;
     width: 100%;
-    
+
 }
 
 /* Style and positioning for categories section */
 
-.section-categories{
+.section-categories {
 
-    
+
     background-color: var(--translucid-black-background);
-    
-    
+
+
 }
 
-.div-container-categories-flexwrap{
-    
+.div-container-categories-flexwrap {
+
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -39,7 +39,7 @@ main{
 
 }
 
-.img-category{
+.img-category {
 
 
     height: 15rem;
@@ -50,7 +50,7 @@ main{
 
 }
 
-.img-category:hover{
+.img-category:hover {
 
     transform: scale(1.05);
 
@@ -59,7 +59,7 @@ main{
 
 /* Style and positioning for services section */
 
-.section-our-services{
+.section-our-services {
     display: flex;
     gap: 3rem;
 
@@ -76,7 +76,7 @@ main{
 
 }
 
-.div-service-container-flexcol{
+.div-service-container-flexcol {
 
     display: flex;
     flex-direction: column;
@@ -87,7 +87,7 @@ main{
 }
 
 
-.fontawesome-service-icon{
+.fontawesome-service-icon {
     text-decoration: none;
     color: white;
     font-size: 1.5rem;
@@ -95,11 +95,11 @@ main{
 
 /* Style and positioning for top selling section */
 
-.section-top-selling-products{
+.section-top-selling-products {
 
     display: flex;
     flex-direction: column;
-    
+
     align-items: center;
     justify-content: center;
 
@@ -109,17 +109,18 @@ main{
     position: relative;
     background-color: var(--translucid-black-background);
 
-        
-    
+
+
 }
 
 
-.section-itemlistconteiner-top10{
+.section-itemlistconteiner-top10 {
 
-    
+    width: 100vw;
+
 }
 
-.div-itemList-top10-container{
+.div-itemList-top10-container {
 
     border: rgb(228, 218, 218) 1px solid;
     border-radius: 0.5rem;
@@ -133,7 +134,7 @@ main{
 
 }
 
-.div-itemList-top10{
+.div-itemList-top10 {
 
     /* scss mixin */
     display: flex;
@@ -148,12 +149,12 @@ main{
 
     padding: 1rem 5rem;
     background-color: var(--more-translucid-black-background);
-    
+
 
 }
 
-.div-itemList-top10:hover{
-    
+.div-itemList-top10:hover {
+
     animation-play-state: paused;
 
 }
@@ -161,25 +162,23 @@ main{
 /* Style and positioning for about us section */
 
 
-.section-about-us{
+.section-about-us {
     display: flex;
     flex-direction: column;
 
     background-color: var(--translucid-black-background);
-    width: 100%;
+    width: 100vw;
 
 }
 
 .section-about-us h2 {
 
-    margin-top: 2rem;
+    margin: 1rem 0rem;
 }
 
 .p-about-us {
 
-    width: 50rem;
-    margin: auto;
-    margin-bottom: 3rem;
+    margin: 0rem 2rem 2rem 2rem;
     line-height: 2.2rem;
     font-weight: 600;
 
@@ -189,3 +188,14 @@ main{
 
 /* poner media queries para cambiar el width y tambien la velocidad de animacion */
 /* hacer smooth scroll para servicios y nosotros */
+
+@media(max-width: 1200px) {
+
+    .div-itemList-top10-container {
+
+        width: 90vw;
+
+    }
+
+
+}
