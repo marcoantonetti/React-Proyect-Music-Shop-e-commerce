@@ -7,13 +7,14 @@ import { Link } from 'react-router-dom'
 
 export const CartConteiner = () => {
 
-    const { cartList, bringCount } = useCartContext()
+    const { cartList, removeItemCart, bringCount, totalPrice } = useCartContext()
 
     console.log('carrito', cartList)
 
-    const sampleFunction = (count) => {
-        console.log('sampleFunction')
+    const takeCount = (count, index) => {
         let counter = count;
+
+        cartList[index].quantity + 1
     }
 
     return (
@@ -24,45 +25,57 @@ export const CartConteiner = () => {
 
             <div className='cart-div-conteiner'>
 
-                {cartList.map((product, index) =>
-                    <div key={index} className='div-cart-item-conteiner-flex-row'>
+                {cartList.length == 0 ?
+
+                    <h4 className='h4-noitems'> There are no items in the cart </h4>
+                    
+                    :
+
+                    
+                        cartList.map((product, index) =>
+                            <div key={index} className='div-cart-item-conteiner-flex-row'>
 
 
-                        <Link className='cart-div-title-img-flex-column' to={`/detail/${product.item.id}`}>
+                                <Link className='cart-div-title-img-flex-column' to={`/detail/${product.item.id}`}>
 
-                            <h4 className='h4-title'>{product.item.title}</h4>
-                            <img className='img-item-detail smaller' src={product.item.thumbnail} alt={product.item.title}></img>
+                                    <h4 className='h4-title'>{product.item.title}</h4>
+                                    <img className='img-item-detail smaller' src={product.item.thumbnail} alt={product.item.title}></img>
 
-                        </Link>
+                                </Link>
 
 
-                        <div className='cart-div-item-buttons-info'>
+                                <div className='cart-div-item-buttons-info'>
 
-                            <div>
+                                    <div>
 
-                                <p> Price: <strong><span>${product.item.price}</span></strong></p>
-                                <p> Condition: <strong>{product.item.condition}</strong></p>
+                                        <p> Price: <strong><span>${product.item.price}</span></strong></p>
+                                        <p> Condition: <strong>{product.item.condition}</strong></p>
+
+                                    </div>
+
+                                    <div className='cart-div-item-buttons'>
+
+                                        <ItemCount initial={product.quantity} stock={product.available_quantity} min={1} bringCount={takeCount}    />
+                                        <FontAwesomeIcon className='trashcan-icon' icon={faTrashCan} style={{ color: "#ff0000", }} onClick={() => removeItemCart(product)} />
+
+                                    </div>
+
+
+                                </div>
+
 
                             </div>
+                        )
+                    
 
-                            <div className='cart-div-item-buttons'>
+                }
 
-                                <ItemCount initial={product.quantity} stock={product.available_quantity} min={1} bringCount={sampleFunction} />
-                                <FontAwesomeIcon className='trashcan-icon' icon={faTrashCan} style={{ color: "#ff0000", }} />
+                    <hr className='cart-hr' />
 
-                            </div>
+                <div className='div-totalPrice-space-between'>
 
-
-                        </div>
-
-
-                    </div>
-                )}
-
-                <div>
-
-                    <hr className='cart-hr'/>
                     <h4> Total </h4>
+                    <p className='p-totalPrice'>   <strong>{Number(totalPrice().toString().split('').splice(0,6).join(''))} </strong> </p>
 
                 </div>
 

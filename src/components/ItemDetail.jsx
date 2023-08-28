@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import CartWidget from './cart/CartWidget'
+import {CartWidget} from './cart/CartWidget'
 import { ItemCount } from './ItemCount'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../context/CartContext'

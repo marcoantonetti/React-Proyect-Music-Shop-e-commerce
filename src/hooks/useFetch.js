@@ -20,6 +20,7 @@ export const useFetch =  (cid, id, sortingMethod) => {
    
     useEffect(() => {
 
+
             const fetchAPI = async () => {
 
                 try{

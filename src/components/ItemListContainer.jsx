@@ -36,8 +36,8 @@ const ItemListContainer = (props) => {
 
 
 
-    console.log('ordenado', top10Products)
-    console.log('productos', products )
+    // console.log('ordenado', top10Products)
+    // console.log('productos', products )
 
     return (
 

@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../../context/CartContext'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
-export default function CartWidget(props) {
+export const CartWidget = memo ( (props) => {
 
   const { shoppingCart } = props
   const { cartList } = useCartContext()
 
-  console.log('carrito', cartList.length)
+  // console.log('carrito', cartList.length)
 
   return (
 
@@ -47,4 +47,5 @@ export default function CartWidget(props) {
     </li>
   )
 }
+)
 

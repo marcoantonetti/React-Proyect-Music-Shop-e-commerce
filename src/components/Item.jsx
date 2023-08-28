@@ -1,6 +1,6 @@
 import React from 'react'
 import Buttons from './NavButtons'
-import CartWidget from './cart/CartWidget'
+import {CartWidget} from './cart/CartWidget'
 import { Link, useParams } from 'react-router-dom'
 import { useCartContext } from '../context/CartContext'
 

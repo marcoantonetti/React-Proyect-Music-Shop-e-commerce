@@ -1,9 +1,7 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Item } from './Item'
 
-const ItemList = ({products, slider}) => {
-
-
+const ItemList =  ({products, slider}) => {
 
     return (
 

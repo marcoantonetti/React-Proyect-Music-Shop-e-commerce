@@ -15,7 +15,7 @@ export const sortByAttribute = (attribute, [...products]) => {
                                         })
                         
                                         
-       console.log('bombon', sortedProducts)    
+    //    console.log(sortedProducts)    
 
        return sortedProducts
 

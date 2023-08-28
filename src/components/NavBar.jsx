@@ -1,7 +1,7 @@
 // Components imports
 import NavButtons from "./NavButtons"
 import SearchBar from "./SearchBar"
-import CartWidget from "./cart/CartWidget"
+import {CartWidget} from "./cart/CartWidget"
 import LogIn from "./LogIn"
 import { Link } from "react-router-dom"
 import { useState } from "react"

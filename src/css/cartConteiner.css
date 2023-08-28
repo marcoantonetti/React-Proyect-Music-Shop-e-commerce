@@ -117,6 +117,29 @@
 
 }
 
+.h4-noitems {
+
+    text-align: center;
+    font-weight: bold;
+    margin: 3rem;
+
+}
+
+.div-totalPrice-space-between{
+
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+
+    margin: 0rem 2rem;
+
+}
+
+.p-totalPrice {
+
+
+}
+
 @media (max-width: 1244px) {
 
     
@@ -191,6 +214,17 @@
 
 
     }
+
+}
+
+@media (max-width: 550px){
+
+    .cart-div-conteiner{
+
+        width: 90%;
+
+    }
+
 
 }
 
