@@ -27,7 +27,7 @@ export const Item = ({img, title, subtitle, price, id, product}) => {
 
         <h3 >{cropedTitle}</h3>
 
-        <p>${price}</p>
+        <p>${Math.trunc(price)}</p>
 
         <hr className='hr-0-margin'/>
 

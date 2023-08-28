@@ -7,14 +7,14 @@ import { Link } from 'react-router-dom'
 
 export const CartConteiner = () => {
 
-    const { cartList, removeItemCart, bringCount, totalPrice } = useCartContext()
+    const { cartList, removeItemCart, totalPrice } = useCartContext()
 
     console.log('carrito', cartList)
 
-    const takeCount = (count, index) => {
+    const takeCount = (count) => {
         let counter = count;
 
-        cartList[index].quantity + 1
+        // cartList[index].quantity + 1
     }
 
     return (
@@ -33,6 +33,7 @@ export const CartConteiner = () => {
 
                     
                         cartList.map((product, index) =>
+
                             <div key={index} className='div-cart-item-conteiner-flex-row'>
 
 
@@ -46,20 +47,19 @@ export const CartConteiner = () => {
 
                                 <div className='cart-div-item-buttons-info'>
 
-                                    <div>
-
+                                    <div>   
+                    
                                         <p> Price: <strong><span>${product.item.price}</span></strong></p>
                                         <p> Condition: <strong>{product.item.condition}</strong></p>
 
                                     </div>
 
                                     <div className='cart-div-item-buttons'>
-
-                                        <ItemCount initial={product.quantity} stock={product.available_quantity} min={1} bringCount={takeCount}    />
+                                        <ItemCount initial={product.quantity} stock={product.available_quantity} min={1} bringCount={() => takeCount()} product= {product}  inShoppingCart={true}  />
+                                        { console.log(product.quantity) }
                                         <FontAwesomeIcon className='trashcan-icon' icon={faTrashCan} style={{ color: "#ff0000", }} onClick={() => removeItemCart(product)} />
 
                                     </div>
-
 
                                 </div>
 

@@ -30,7 +30,7 @@ export const useCount = (initial = 0, max, min) =>{
 
     const reset = () => {
 
-        setCount(initial)
+        setCount(1)
 
     }
 

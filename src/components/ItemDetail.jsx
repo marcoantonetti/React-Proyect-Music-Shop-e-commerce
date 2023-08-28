@@ -98,7 +98,7 @@ export const ItemDetail = ({ children }) => {
 
             
             <div>
-            <ItemCount initial={1} stock={available_quantity} min={1} bringCount={bringCount} />
+            <ItemCount initial={1} stock={available_quantity} min={1} bringCount={bringCount} inShoppingCart = {false} />
             </div>
             
           </div>
