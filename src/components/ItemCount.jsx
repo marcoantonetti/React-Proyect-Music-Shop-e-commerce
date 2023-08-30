@@ -11,8 +11,8 @@ export const ItemCount = ({initial=1, stock=10, min=0, bringCount, product, inSh
 
   const {updateQuantity} = useCartContext()
   
-  const {count, increment, decrement, reset} = useCount(initial, stock, min )
-  console.log('myCount: ', count)
+  const {inicial, count, increment, decrement, reset} = useCount(initial, stock, min )
+
   
   return (
 
@@ -20,7 +20,7 @@ export const ItemCount = ({initial=1, stock=10, min=0, bringCount, product, inSh
     <div className='div-counter-button-container'>
 
       <button class='button-counter' onClick={() => { increment(); if ( inShoppingCart ) updateQuantity(true, product)}} > + </button>
-      <div onChange={bringCount(count)}>{count}</div>
+      <div onChange={bringCount(count)}> {inShoppingCart ? initial : count} </div>
       <button class='button-counter' onClick={() => { decrement(); if ( inShoppingCart ) updateQuantity(false, product)}}> - </button>
 
       <button class='button-counter' onClick={() => { reset(); updateQuantity(null, product, true)}}> Reset </button>

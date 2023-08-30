@@ -10,6 +10,8 @@
 
     padding: 2rem;
 
+    /* font-size: 1.5rem; */
+
 }
 
 .div-cart-item-conteiner-flex-row{
@@ -92,7 +94,7 @@
 .trashcan-icon{
 
     position: absolute;
-    right: 0.4rem;
+    right: -1rem;
     top: 0.36rem;
 
     padding: 0.25rem;
@@ -142,7 +144,11 @@
 
 @media (max-width: 1244px) {
 
-    
+    .cart-div-conteiner {
+
+        font-size: 1rem
+
+    }
 
     .cart-div-item-buttons-info{
 
@@ -151,7 +157,7 @@
 
     .trashcan-icon{
 
-        right: 0rem;
+        right: -0.5rem;
     }
 
 }
@@ -204,7 +210,7 @@
 
    .trashcan-icon{
 
-    right: 0.4rem;
+    right: 0rem;
     top: 0.36rem;
    }
 

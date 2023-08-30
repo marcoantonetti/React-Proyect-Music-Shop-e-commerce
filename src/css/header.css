@@ -4,7 +4,7 @@
 
     background-color: var(--light-gray);
 
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: black;
     width: 100%;
     z-index: 3;
@@ -20,7 +20,7 @@
 .link-main-logo-center {
 
     display: flex;
-    height: 8rem;
+    height: 12rem;
 
     margin: auto;
 
@@ -28,7 +28,7 @@
 
 .img-main-logo {
     height: 100%;
-    width: 8rem;
+    width: 12rem;
     margin: 0.5rem auto;
 
 }
@@ -58,6 +58,7 @@
     transition: all 2s ease;
 
 }
+
 
 .ul-navButtons-flex-row:last-child {
     gap: 1rem;
@@ -95,10 +96,11 @@
 
 }
 
+
 /* Style of Nav Bar buttons */
 .li-nav-button {
     font-weight: 500;
-    width: 6rem;
+    width: 7rem;
 
 }
 
@@ -142,7 +144,7 @@
     color: black;
     position: absolute;
     left: 1rem;
-    top: 8.8rem;
+    top: 12.5rem;
 
 
     display: flex;

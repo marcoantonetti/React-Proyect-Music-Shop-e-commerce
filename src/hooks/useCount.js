@@ -3,7 +3,6 @@ import { useState } from "react";
 
 export const useCount = (initial = 0, max, min) =>{
 
-    if(initial < min || initial > max) initial = min;
     if(max > 20) max = 20
 
     const [count, setCount] = useState(initial);
@@ -25,7 +24,7 @@ export const useCount = (initial = 0, max, min) =>{
 
             setCount(prev => prev + 1)
         }
-
+        
     }
 
     const reset = () => {
@@ -34,6 +33,7 @@ export const useCount = (initial = 0, max, min) =>{
 
     }
 
-    return {count, decrement, increment, reset}
+    let inicial = count;
+    return {inicial, count, decrement, increment, reset}
 
 }

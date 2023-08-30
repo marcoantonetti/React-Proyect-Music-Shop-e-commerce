@@ -7,12 +7,6 @@ I kept solidifing and expanding knowledge of CSS, HTML and JS and since I had al
 
 
 
-
-precio: solo 3 digitos
-que al clickear item en carrito vuelva al item detail de ese item
-delete button
-que al sumar el mismo item se suma el counter no otro item
-precio total en funcion del counter
-precio total de todos los items
-
+mejor loading page
+login page
 buscador y firebase

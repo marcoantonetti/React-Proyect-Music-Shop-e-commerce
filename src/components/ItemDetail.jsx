@@ -87,7 +87,7 @@ export const ItemDetail = ({ children }) => {
 
             <div>
 
-            <Link onClick={() => { addToCart({ item: children, quantity: count }) }} className='itemdetail-cart-button'>
+            <Link onClick={() => { addToCart ({ item: children, quantity: count }, false ) }} className='itemdetail-cart-button'>
 
               <button>Add to</button>
               <CartWidget />

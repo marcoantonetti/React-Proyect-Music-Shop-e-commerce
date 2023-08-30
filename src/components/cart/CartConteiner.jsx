@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React, { memo, useContext } from 'react'
 import { useCartContext } from '../../context/CartContext'
 import { ItemCount } from '../ItemCount'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
-export const CartConteiner = () => {
+export const CartConteiner = memo(() => {
 
     const { cartList, removeItemCart, totalPrice } = useCartContext()
 
@@ -56,7 +56,6 @@ export const CartConteiner = () => {
 
                                     <div className='cart-div-item-buttons'>
                                         <ItemCount initial={product.quantity} stock={product.available_quantity} min={1} bringCount={() => takeCount()} product= {product}  inShoppingCart={true}  />
-                                        { console.log(product.quantity) }
                                         <FontAwesomeIcon className='trashcan-icon' icon={faTrashCan} style={{ color: "#ff0000", }} onClick={() => removeItemCart(product)} />
 
                                     </div>
@@ -85,3 +84,4 @@ export const CartConteiner = () => {
 
     )
 }
+)

@@ -48,9 +48,16 @@ const ItemListContainer = (props) => {
 
             {loading ?
 
-                <> <p>Loading our products</p>
+                <div className='div-loading-container'> 
+                    
+                    <div className='div-loading-margin-auto'>
+
+                    <p className='p-loading'>Loading our products</p>
                     <FontAwesomeIcon icon={faSpinner} className='fa-spin' />
-                </>
+                    
+                    </div>
+
+                </div>
 
                 :
 

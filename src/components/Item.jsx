@@ -31,7 +31,7 @@ export const Item = ({img, title, subtitle, price, id, product}) => {
 
         <hr className='hr-0-margin'/>
 
-        <Link  className='item-layout-cart-button-absolute' onClick={()=>{addToCart({item:product, quantity:1})}}>
+        <Link  className='item-layout-cart-button-absolute' onClick={()=>{ addToCart( { item:product, quantity:1 }, true )}}>
 
         <button> Add To </button>
         <CartWidget shoppingCart={false}/>
