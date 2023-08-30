@@ -8,9 +8,10 @@
 
     gap: 3rem;
 
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 100;
     color: black;
+
   }
   
 
@@ -95,11 +96,14 @@
     align-items: center;
     margin-bottom: 20px;
 
+    height: 5rem;
+
     gap: 1rem;
   }
   
 .social-links ul{
     display: flex;
+    flex-wrap: wrap;
 }
 
   .social-links a {
@@ -107,6 +111,7 @@
     text-decoration: none;
     margin: 0 10px;
     font-size: 20px;
+  
   }
   
   /* Styles for the copyright message */
@@ -137,4 +142,20 @@
     
       }
 
+      .footer-container {
+
+        font-size: 1rem ;
+
+      }
+
+  }
+
+  @media (max-width: 450px) {
+
+    .social-links {
+
+      height: 7.2rem;
+
+    }
+    
   }

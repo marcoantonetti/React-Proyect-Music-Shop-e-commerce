@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const LandingPage = () => {
 
+    const mediaQuery = window.screen.availWidth >= 700
+
 
     return (
 
@@ -16,7 +18,7 @@ export const LandingPage = () => {
 
             <img src='/images/IMG_9952.jpeg' className='img-cover'></img>
 
-            <section className="section-top-selling-products">
+            <section id={mediaQuery ? "services" : ''}  className="section-top-selling-products">
 
                 <h3 className='h3-title-landing'> Top Selling Products  </h3>
 
@@ -24,7 +26,7 @@ export const LandingPage = () => {
 
             </section>
 
-            <section className="section-our-services">
+            <section id= { mediaQuery ? 'about-us' : 'services' } className="section-our-services">
 
                 <Services>
                     {allServices}
@@ -32,11 +34,11 @@ export const LandingPage = () => {
 
             </section>
 
-            <section className='section-about-us'>
+            <section  className='section-about-us'>
 
                 <h2 className='h2-subtitle'>About Us</h2>
                 <hr />
-                <p className='p-about-us'> Welcome to Music Shop: a family-owned e-commerce music shop. We are deeply devoted to the enchanting world of music and shipping its top-quality instruments worldwide is how we spread this fair art. With a wide range of instruments, accessories, and resources, we are dedicated to fueling your musical aspirations.
+                <p id={mediaQuery ? 'categories' : 'about-us' } className='p-about-us'> Welcome to Music Shop: a family-owned e-commerce music shop. We are deeply devoted to the enchanting world of music and shipping its top-quality instruments worldwide is how we spread this fair art. With a wide range of instruments, accessories, and resources, we are dedicated to fueling your musical aspirations.
 
  Browse through our categories below or search exactly what you are looking for on the search bar.
 
@@ -45,10 +47,9 @@ At Music Shop, we strive to create a vibrant community of music lovers, connecti
 
             </section>
 
-            <section id='categories' className='section-categories'>
+            <section  className='section-categories'>
            
-            <h3 className='h3-title-landing'> Categories </h3>
-            <hr />
+            <hr  id = { mediaQuery ? '' : 'categories' } />
 
                 <Categories />
 

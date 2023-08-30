@@ -18,8 +18,7 @@ const NavBar = (props) => {
         return setBool(!bool)
         
     }
-
-
+    
     return (
         <header role='header' className="header-flex-column">
 
@@ -42,9 +41,9 @@ const NavBar = (props) => {
                 <ul role='navigation-buttons' className= {bool ? "ul-navButtons-flex-column" : 'ul-navButtons-flex-row' }>
                     {/* La prop de classSelector es porque me parece que voy a hacer un Button componente para todo.
                              Y la clase indica que tipo de boton sera Que opinas? */}
-                    <NavButtons name='Servicies' classSelector='li-nav-button' />
+                    <NavButtons name='Servicies' classSelector='li-nav-button' link='/#services' />
+                    <NavButtons name='About Us' classSelector='li-nav-button' link='/#about-us' />
                     <NavButtons name='Categories' classSelector='li-nav-button' link='/#categories' />
-                    <NavButtons name='About Us' classSelector='li-nav-button' link='/#div-about-us' />
 
                 </ul>
 

@@ -1,4 +1,5 @@
 .header-flex-column {
+
     display: flex;
     flex-direction: column;
 
@@ -147,7 +148,7 @@
     top: 12.5rem;
 
 
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-evenly;
 
@@ -190,6 +191,12 @@
 
 @media (max-width: 740px) {
 
+    .header__hamburguer-button{
+
+        display: flex;
+
+    }
+
     .header__hamburguer-bar{
 
         display: block;
@@ -225,3 +232,34 @@
     
 
 }   
+
+@media ( max-height: 550px ), ( max-width: 680px ){
+
+
+    .link-main-logo-center {
+
+        height: 6.5rem;
+
+    }
+
+    .img-main-logo{
+
+        width: 6.5rem;
+
+    }
+
+    .header__hamburguer-button{
+
+        top: 7.5rem;
+
+    }
+
+    .header-flex-column {
+
+        font-size: 1.2rem;
+
+    }
+
+
+
+}
