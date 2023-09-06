@@ -14,8 +14,14 @@ main {
 .img-cover {
 
     object-fit: cover;
-    height: 40rem;
+    height: 45rem;
     width: 100%;
+
+}
+
+.h2-subtitle{
+
+    font-size: 3rem;
 
 }
 

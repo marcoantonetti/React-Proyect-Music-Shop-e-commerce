@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { useCartContext } from '../context/CartContext'
 
 
-export const ItemDetail = ({ children }) => {
+export const ItemDetail = React.memo(({ children }) => {
 
   const { thumbnail, title, price, condition, available_quantity, seller, shipping } = children
 
@@ -112,4 +112,4 @@ export const ItemDetail = ({ children }) => {
 
 
   )
-}
+})

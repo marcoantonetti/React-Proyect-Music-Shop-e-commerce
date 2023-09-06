@@ -136,6 +136,7 @@
 
     transition: all 1s ease;
     transform: translateY(0rem);
+    font-size: 1rem;
 
 }
 

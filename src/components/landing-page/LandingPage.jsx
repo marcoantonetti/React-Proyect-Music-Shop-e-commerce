@@ -8,7 +8,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const LandingPage = () => {
 
-    const mediaQuery = window.screen.availWidth >= 700
+    const screenSize = window.screen.availWidth >= 700 // This is because of the internal links I am using in the landing page. 
+    // When you click on services it smoothly goes to service section but on mobile it goes a bit further down the page
+    // So I used the screenSize variable and ternary operator to address this issue
 
 
     return (
@@ -18,7 +20,7 @@ export const LandingPage = () => {
 
             <img src='/images/IMG_9952.jpeg' className='img-cover'></img>
 
-            <section id={mediaQuery ? "services" : ''}  className="section-top-selling-products">
+            <section id={screenSize ? "services" : ''}  className="section-top-selling-products">
 
                 <h3 className='h3-title-landing'> Top Selling Products  </h3>
 
@@ -26,7 +28,7 @@ export const LandingPage = () => {
 
             </section>
 
-            <section id= { mediaQuery ? 'about-us' : 'services' } className="section-our-services">
+            <section id= { screenSize ? 'about-us' : 'services' } className="section-our-services">
 
                 <Services>
                     {allServices}
@@ -38,7 +40,7 @@ export const LandingPage = () => {
 
                 <h2 className='h2-subtitle'>About Us</h2>
                 <hr />
-                <p id={mediaQuery ? 'categories' : 'about-us' } className='p-about-us'> Welcome to Music Shop: a family-owned e-commerce music shop. We are deeply devoted to the enchanting world of music and shipping its top-quality instruments worldwide is how we spread this fair art. With a wide range of instruments, accessories, and resources, we are dedicated to fueling your musical aspirations.
+                <p id={screenSize ? 'categories' : 'about-us' } className='p-about-us'> Welcome to Music Shop: a family-owned e-commerce music shop. We are deeply devoted to the enchanting world of music and shipping its top-quality instruments worldwide is how we spread this fair art. With a wide range of instruments, accessories, and resources, we are dedicated to fueling your musical aspirations.
 
  Browse through our categories below or search exactly what you are looking for on the search bar.
 
@@ -48,8 +50,11 @@ At Music Shop, we strive to create a vibrant community of music lovers, connecti
             </section>
 
             <section  className='section-categories'>
+
+            <h2 className='h2-subtitle'>Categories</h2>
+
            
-            <hr  id = { mediaQuery ? '' : 'categories' } />
+            <hr  id = { screenSize ? '' : 'categories' } />
 
                 <Categories />
 

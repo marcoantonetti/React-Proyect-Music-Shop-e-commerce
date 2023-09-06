@@ -2,7 +2,7 @@
 import NavButtons from "./NavButtons"
 import SearchBar from "./SearchBar"
 import {CartWidget} from "./cart/CartWidget"
-import LogIn from "./LogIn"
+import LogIn from "./landing-page/LogIn"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 

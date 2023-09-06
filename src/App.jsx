@@ -6,8 +6,10 @@ import { UrlNotFound } from './components/UrlNotFound'
 import { LandingPage } from './components/landing-page/LandingPage'
 import { CartContextProvider } from './context/CartContext'
 import { CartConteiner } from './components/cart/CartConteiner'
+import UserAccount from './components/userAccount'
 import ScrollToHashElement from './functions/ScrollToHashElement'
 import { Footer } from './components/footer'
+import LogIn from './components/landing-page/LogIn'
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
       <Route exact path='/detail/:pid' element={<ItemDetailContainer/>}  />
       <Route exact path='/cart' element={<CartConteiner/>}  />
       <Route exact path='/404error' element={<UrlNotFound/>}  />
+      <Route exact path='/log-in' element={<UserAccount/>}  />
+
 
       {/* <Route exact path='*' element={<Navigate to={'404error'}/>}/> */}
 
