@@ -1,12 +1,6 @@
 # React-Proyect-Music-Shop-e-commerce
-My latest proyect, after learning proficient level of HTML, CSS, Javascript and Typesrcript I advanced to a latter................ teconology. React.JS enables many features 
+My latest proyect, after learning proficient level of HTML, CSS, Javascript and Typesrcript I advanced to a React. In this ecommerce I consumed 'Mercado Libre' API (latin american Amazon) to get hold of over 50 products and displaying and sorting them in different ways throughout the SPA.
 
-I kept solidifing and expanding knowledge of CSS, HTML and JS and since I had already done a previous e-commerce with similar features I got the chance to cross-compare that ecommerce with this one using react. In the former I heavily used JS to interact with the DOM while here I used JSX, there are many examples in the code where I can see the advantages of using react in comparisson to vanilla JS as well as knowing all the 'under the hood' mechanisms that are taken place behind JSX.
+I kept solidifing and expanding knowledge of CSS, HTML and JS and since I had already done a previous e-commerce with similar features I got the chance to cross-compare that ecommerce with this one using react. There are many examples in the code where I can see the advantages of using react in comparisson to vanilla JS as well as knowing all the 'under the hood' mechanisms that are taken place behind JSX.
 
-
-
-
-
-mejor loading page
-login page
-buscador y firebase
+Understanding the unilateral direction of data that goes from higher components to its children via props, how events can trigger functions that go up the component tree, using Context when components are too far away from each other on the tree,using Link and Router and how you can use hooks to treat with the ongoing change of state of the components helped me really grasp the layers of complexity in my application. And even better, to allow me to understand React logic and component interaction for future proyects and profesional work.
