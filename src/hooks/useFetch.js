@@ -3,6 +3,10 @@
 
 import React, { useEffect, useState } from 'react'
 import { allCategories } from '../objects/categories';
+import { doc, getDoc, getDocs, collection, query, where, limit, orderBy } from 'firebase/firestore'
+import { dataBase, myCollection } from '../firebase/config';
+
+
 
 //  A hook that fetches a filtered array of products from mercado libre API. 
 //  When a cid (category ID) parameter is passed, the hook fecthes products that matches that category. 
@@ -14,7 +18,7 @@ export const useFetch =  (cid, id, sortingMethod) => {
     const url = "https://api.mercadolibre.com/sites/MLA/search?category=MLA1182";
     
     // useStates
-    const [products, setProducts] = useState('')
+    const [products, setProducts] = useState([])
     const [error, setError] = useState (false)
     const [loading, setLoading] = useState(true)
    
@@ -87,10 +91,82 @@ export const useFetch =  (cid, id, sortingMethod) => {
        
             fetchAPI()
 
+            // Populate firestore collection    
+
+           // I ran this once to populate my firestore database collection with the products from the API
+
+           /* 
+            products.map( ( product ) => {
+
+                 setDoc(doc(dataBase, 'products-firestore', product.id ), product)
+
+            } )*/
+
     }, [cid,id])
 
     
   return {products, error, loading}
+}
+
+// This accomplishes the same as useFetch but it uses my firestore collection to retrieve data  
+// Firebase fetch
+export const useFbFetch = (cid, id, sortingMethod) => {
+
+       // useStates
+       const [products, setProducts] = useState([])
+       const [error, setError] = useState (false)
+       const [loading, setLoading] = useState(true)
+
+
+       useEffect((  )  => { 
+
+        
+        if (cid){
+
+        
+              // Filter by category
+              let queryFilter = query (
+                  myCollection,
+                  where(category_id, '==', cid)
+              )
+        
+              getDocs(queryFilter)
+              .then(resp => setProducts( resp.docs.map(producto => (producto) ) ))
+              .catch(setError(true))
+              .finally(()=> setLoading(false))    
+    
+        // Filter by ID
+       } else if (id){
+
+               let queryDoc = doc (
+                   dataBase,
+                   'products-firestore',
+                   id
+               )
+        
+        getDoc(queryDoc)
+        .then( response => {setProducts(response)})
+        .catch(setError(true))
+        .finally(()=> setLoading(false))    
+
+    } else {       
+
+        let getCollection = async (  ) => {
+
+           const dataCol = await Firebase.firestore.collection(dataBase,'products-firestore').get()
+           setProducts(dataCol.map( (product) => product ))   
+           setLoading(false)     
+
+        }
+
+        getCollection()
+
+    }
+
+        } , [cid, id])
+
+        return {products, error, loading}
+
 }
 
 

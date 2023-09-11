@@ -13,8 +13,6 @@ const NavBar = (props) => {
 
     const changeBool = () => {
 
-        console.log(bool)
-
         return setBool(!bool)
         
     }

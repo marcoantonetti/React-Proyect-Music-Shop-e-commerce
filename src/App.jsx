@@ -10,11 +10,14 @@ import UserAccount from './components/userAccount'
 import ScrollToHashElement from './functions/ScrollToHashElement'
 import { Footer } from './components/footer'
 import LogIn from './components/landing-page/LogIn'
+import { UserContextProvider } from './context/UserContext'
 
 
 function App() {
 
   return (
+
+    <UserContextProvider>
 
     <CartContextProvider>
 
@@ -46,6 +49,8 @@ function App() {
     </BrowserRouter>
 
    </CartContextProvider>
+
+   </UserContextProvider>
 
 
   )

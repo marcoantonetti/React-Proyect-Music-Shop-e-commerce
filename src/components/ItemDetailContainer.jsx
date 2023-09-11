@@ -3,7 +3,7 @@ import { ItemDetail } from './ItemDetail';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { useParams } from 'react-router-dom';
-import { useFetch } from '../hooks/useFetch';
+import { useFetch, useFbFetch } from '../hooks/useFetch';
 
 
 
@@ -14,7 +14,6 @@ export const ItemDetailContainer = () => {
 
 
   const { products, loading, error } = useFetch(undefined, pid)
-  console.log(products)
 
   return (
 

@@ -19,11 +19,11 @@ export const ItemCount = ({initial=1, stock=10, min=0, bringCount, product, inSh
 
     <div className='div-counter-button-container'>
 
-      <button class='button-counter' onClick={() => { increment(); if ( inShoppingCart ) updateQuantity(true, product)}} > + </button>
+      <button className='button-counter' onClick={() => { increment(); if ( inShoppingCart ) updateQuantity(true, product)}} > + </button>
       <div onChange={bringCount(count)}> {inShoppingCart ? initial : count} </div>
-      <button class='button-counter' onClick={() => { decrement(); if ( inShoppingCart ) updateQuantity(false, product)}}> - </button>
+      <button className='button-counter' onClick={() => { decrement(); if ( inShoppingCart ) updateQuantity(false, product)}}> - </button>
 
-      <button class='button-counter' onClick={() => { reset(); updateQuantity(null, product, true)}}> Reset </button>
+      <button className='button-counter' onClick={() => { reset(); updateQuantity(null, product, true)}}> Reset </button>
 
     </div>
 

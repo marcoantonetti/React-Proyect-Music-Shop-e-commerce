@@ -166,6 +166,24 @@
 
 }
 
+.button-container {
+
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    margin-top: 1rem;
+
+}
+
+.button-counter.green-big {
+
+    background-color: lightgreen;
+    transform: scale(1.2);
+    font-weight: bolder;
+
+}
+
 
 @media (max-width: 1080px) {
 

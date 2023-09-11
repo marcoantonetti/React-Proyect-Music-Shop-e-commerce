@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
+import { dataBase, myCollection } from '../firebase/config';
+import { useCartContext } from '../context/CartContext';
+import { useUserContext } from '../context/UserContext';
 
 export default function UserAccount() {
 
-    const [password, setPassword] = useState('');
-    const [user, setUser] = useState('');
-    const [login, setLogin] = useState(true)
+    // const {setOrder} = useCartContext()
 
-
+    const {user, setUser, password, setPassword, login, setLogin} = useUserContext()
 
     const handlePassword = (e) => {
 
         // setPasword({'password': e.target.value}) cambia esto por un serverupdate
         setPassword(e.target.value)
-        console.log(e.target.value)
 
 
     }
@@ -21,7 +21,6 @@ export default function UserAccount() {
 
         // setUser({'user': e.target.value})  cambia esto por un serverupdate
         setUser(e.target.value)
-        console.log(e.target.value)
 
     }
 
@@ -31,8 +30,6 @@ export default function UserAccount() {
         alert('Form submited')
 
         setLogin(false)
-
-
     }
 
 

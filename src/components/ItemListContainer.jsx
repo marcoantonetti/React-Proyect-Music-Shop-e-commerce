@@ -3,8 +3,10 @@ import ItemList from './ItemList'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { useParams } from 'react-router-dom'
-import { useFetch } from '../hooks/useFetch'
+import { useFetch, useFbFetch } from '../hooks/useFetch'
 import { sortByAttribute } from '../functions/filteredProducts'
+
+
 
 
 const ItemListContainer = (props) => {
@@ -12,10 +14,14 @@ const ItemListContainer = (props) => {
     const { attribute, top10 } = props;
     // const {items, setItems} = useState([])
 
+    // cid = category
     const { cid } = useParams()
 
 
     const { products, loading, error } = useFetch(cid)
+
+       
+
 
     let sortedProducts;
     let top10Products;
@@ -28,16 +34,13 @@ const ItemListContainer = (props) => {
 
     if (top10) {
 
+        // top 10 best sold products as seen in the landing page
         top10Products = sortedProducts
             .slice()
             .splice(0, 10)
 
     }
 
-
-
-    // console.log('ordenado', top10Products)
-    // console.log('productos', products )
 
     return (
 
