@@ -26,6 +26,7 @@
 
     --shadow-black-box: 0.05rem 0.05rem 0.20rem rgb(105, 99, 99), -0.05rem -0.05rem 0.20rem rgb(105, 100, 100);
     --shadow-blacker-box: 0.08rem 0.08rem 0.20rem rgb(3, 3, 3), -0.08rem -0.08rem 0.20rem rgb(0, 0, 0);
+    --shadow-subtle-black-box: 0.04rem 0.04rem 0.1rem rgb(47, 45, 45), -0.04rem -0.04rem 0.10rem rgb(47, 45, 45);
     --shadow-white-box: 0.15rem 0.15rem 0.20rem rgb(239, 232, 232), -0.15rem -0.15rem 0.20rem rgb(239, 232, 232);
 
        /* variables for responsive design */

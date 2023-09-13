@@ -159,7 +159,8 @@ export const CartContextProvider = memo(({ children }) => {
             .then(resp => console.log('order', resp))
             .catch(err => console.log('err', err))
 
-
+        alert('Order placed on Firestore')
+        
         emptyCart()
 
 
